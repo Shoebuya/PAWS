@@ -291,6 +291,28 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
   .detail-mode footer{padding-bottom:84px}
 }
 
+/* trips, horizontal */
+.trips{display:grid;grid-template-columns:1fr;gap:24px}
+.th{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.th .mh-media{min-height:360px}
+.th .mh-media img.main{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1}
+.done{background:var(--ink);color:var(--on-ink)}
+.date-big{font:700 .8rem/1.2 var(--body);letter-spacing:var(--track);text-transform:uppercase;color:var(--gold)}
+.names{display:flex;flex-wrap:wrap;gap:6px}
+.names span{font:600 .82rem var(--body);background:var(--gold-soft);color:var(--ink);padding:4px 10px;border-radius:999px}
+.names.clamp{max-height:62px;overflow:hidden;mask-image:linear-gradient(#000 70%,transparent)}
+.pcount{position:absolute;bottom:14px;inset-inline-end:14px;z-index:2;font:700 .78rem var(--body);background:rgba(15,30,39,.72);color:#fff;padding:5px 10px;border-radius:999px;display:inline-flex;gap:6px;align-items:center}
+.pcount svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+.d-done{display:grid;gap:12px}
+.d-done .big{font:800 2.4rem/1 var(--display);font-stretch:112%;color:var(--gold)}
+.d-gallery.full{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.d-gallery.full a{display:block}
+.d-gallery.full img{aspect-ratio:3/4}
+@media (max-width:860px){
+  .th{grid-template-columns:1fr}
+  .th .mh-media{min-height:300px}
+}
+
 @media (max-width:760px){
   .flight .lbl{font-size:30px}.flight .sub{font-size:20px}
   .impact{padding:22px 18px}
@@ -542,6 +564,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       loc_label:"Dove ti trovi?",loc_all:"Tutti i ruoli",loc_ae:"Negli Emirati",loc_it:"In Italia",loc_any:"Ovunque",tm_r1:"Un volo",tm_r2:"Per sempre o qualche settimana",tm_r3:"Qualche ora a settimana",tm_r4:"Qualche settimana",tm_r5:"5 minuti",apply:"Mi candido",msg_intro:"Copia questo messaggio e mandacelo in direct su Instagram:",copy_msg:"Copia messaggio",open_ig:"Apri Instagram",msg_tpl:"Ciao Paws Without Borders! Ho visto il vostro sito e vorrei aiutarvi come: {role}.\nVi scrivo da: \nSono disponibile: ",
       rate_note:"Prezzi in dirham degli Emirati (AED). Conversione indicativa: 1 AED = € {r}.",
       read_story:"Leggi la storia completa",back:"Torna alle missioni",share:"Condividi",link_copied:"Link copiato",raised_big:"{x}",of_goal:"raccolti su {x}",pct:"{p}%",cats_n:"{n} gatti",flight_on:"Volo del {d}",donate_cta:"Dona su GoFundMe",story_h:"La storia",photos_h:"Foto",not_found:"Questa missione non è più disponibile.",help_share:"Non puoi donare? Condividere la raccolta aiuta tantissimo.",
+      read_trip:"Leggi il racconto completo",back_trips:"Torna ai viaggi",photos_n:"{n} foto",mission_done:"Missione compiuta",cats_home:"gatti arrivati a casa",next_mission:"Sostieni la prossima missione",adopted:"I gatti di questo viaggio",
       st:{raccolta:"Raccolta fondi",cure:"In cura",documenti:"Documenti in corso",volo:"Volo prenotato",casa:"Arrivato a casa"}},
     en:{from:"Emirates",to:"Italy",hook:"Families leave. Their cats stay on the street.",
       lead:"Too often, families leaving the country abandon their cats on the street, under a sun that tops 45 degrees in summer. We find them and, together with vets and fosters, we treat them and get them ready to fly to Italy, where a new family is waiting.",
@@ -570,6 +593,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       loc_label:"Where are you?",loc_all:"All roles",loc_ae:"In the Emirates",loc_it:"In Italy",loc_any:"Anywhere",tm_r1:"One flight",tm_r2:"Forever or a few weeks",tm_r3:"A few hours a week",tm_r4:"A few weeks",tm_r5:"5 minutes",apply:"I want to help",msg_intro:"Copy this message and send it to us on Instagram:",copy_msg:"Copy message",open_ig:"Open Instagram",msg_tpl:"Hi Paws Without Borders! I saw your website and I'd like to help as: {role}.\nI'm writing from: \nI'm available: ",
       rate_note:"Prices in UAE dirham (AED). Approximate conversion: 1 AED = € {r}.",
       read_story:"Read the full story",back:"Back to missions",share:"Share",link_copied:"Link copied",raised_big:"{x}",of_goal:"raised of {x}",pct:"{p}%",cats_n:"{n} cats",flight_on:"Flight on {d}",donate_cta:"Donate on GoFundMe",story_h:"The story",photos_h:"Photos",not_found:"This mission is no longer available.",help_share:"Can't donate? Sharing the fundraiser helps a lot.",
+      read_trip:"Read the full story",back_trips:"Back to journeys",photos_n:"{n} photos",mission_done:"Mission accomplished",cats_home:"cats made it home",next_mission:"Support the next mission",adopted:"The cats on this journey",
       st:{raccolta:"Fundraising",cure:"In treatment",documenti:"Paperwork in progress",volo:"Flight booked",casa:"Home at last"}},
     fr:{from:"Émirats",to:"Italie",hook:"Les familles partent. Les chats restent dans la rue.",
       lead:"Trop souvent, des familles qui quittent le pays abandonnent leurs chats dans la rue, sous un soleil qui dépasse les 45 degrés en été. Nous les trouvons et, avec des vétérinaires et des familles d'accueil, nous les soignons et les préparons au vol vers l'Italie, où une nouvelle famille les attend.",
@@ -598,6 +622,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       loc_label:"Où êtes-vous ?",loc_all:"Tous les rôles",loc_ae:"Aux Émirats",loc_it:"En Italie",loc_any:"Partout",tm_r1:"Un vol",tm_r2:"Pour toujours ou quelques semaines",tm_r3:"Quelques heures par semaine",tm_r4:"Quelques semaines",tm_r5:"5 minutes",apply:"Je me propose",msg_intro:"Copiez ce message et envoyez-le-nous sur Instagram :",copy_msg:"Copier le message",open_ig:"Ouvrir Instagram",msg_tpl:"Bonjour Paws Without Borders ! J'ai vu votre site et j'aimerais vous aider comme : {role}.\nJ'écris depuis : \nJe suis disponible : ",
       rate_note:"Prix en dirhams des Émirats (AED). Conversion indicative : 1 AED = {r} €.",
       read_story:"Lire toute l'histoire",back:"Retour aux missions",share:"Partager",link_copied:"Lien copié",raised_big:"{x}",of_goal:"collectés sur {x}",pct:"{p} %",cats_n:"{n} chats",flight_on:"Vol du {d}",donate_cta:"Donner sur GoFundMe",story_h:"L'histoire",photos_h:"Photos",not_found:"Cette mission n'est plus disponible.",help_share:"Vous ne pouvez pas donner ? Partager la cagnotte aide énormément.",
+      read_trip:"Lire tout le récit",back_trips:"Retour aux voyages",photos_n:"{n} photos",mission_done:"Mission accomplie",cats_home:"chats arrivés chez eux",next_mission:"Soutenir la prochaine mission",adopted:"Les chats de ce voyage",
       st:{raccolta:"Collecte en cours",cure:"En soins",documenti:"Documents en cours",volo:"Vol réservé",casa:"Enfin chez lui"}},
     ru:{from:"Эмираты",to:"Италия",hook:"Семьи уезжают. Кошки остаются на улице.",
       lead:"Слишком часто семьи, уезжая из страны, бросают своих кошек на улице, под солнцем, которое летом раскаляет воздух выше 45 градусов. Мы находим их и вместе с ветеринарами и передержками лечим и готовим к перелёту в Италию, где их ждёт новая семья.",
@@ -626,6 +651,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       loc_label:"Где вы находитесь?",loc_all:"Все роли",loc_ae:"В Эмиратах",loc_it:"В Италии",loc_any:"Где угодно",tm_r1:"Один рейс",tm_r2:"Навсегда или на несколько недель",tm_r3:"Несколько часов в неделю",tm_r4:"Несколько недель",tm_r5:"5 минут",apply:"Хочу помочь",msg_intro:"Скопируйте это сообщение и отправьте нам в Instagram:",copy_msg:"Копировать сообщение",open_ig:"Открыть Instagram",msg_tpl:"Здравствуйте, Paws Without Borders! Я посмотрел(а) ваш сайт и хочу помочь. Роль: {role}.\nЯ нахожусь в: \nКогда могу помогать: ",
       rate_note:"Цены в дирхамах ОАЭ (AED). Примерный курс: 1 AED = € {r}.",
       read_story:"Читать всю историю",back:"Назад к миссиям",share:"Поделиться",link_copied:"Ссылка скопирована",raised_big:"{x}",of_goal:"собрано из {x}",pct:"{p}%",cats_n:"Кошек: {n}",flight_on:"Рейс {d}",donate_cta:"Помочь на GoFundMe",story_h:"История",photos_h:"Фото",not_found:"Эта миссия больше недоступна.",help_share:"Не можете пожертвовать? Репост сбора тоже очень помогает.",
+      read_trip:"Читать весь рассказ",back_trips:"Назад к путешествиям",photos_n:"Фото: {n}",mission_done:"Миссия выполнена",cats_home:"кошек уже дома",next_mission:"Поддержать следующую миссию",adopted:"Кошки этого рейса",
       st:{raccolta:"Идёт сбор",cure:"На лечении",documenti:"Оформляем документы",volo:"Рейс забронирован",casa:"Уже дома"}},
     ar:{from:"الإمارات",to:"إيطاليا",hook:"العائلات ترحل، والقطط تبقى في الشارع.",
       lead:"كثيرًا ما تتخلى عائلات عن قططها في الشارع عند مغادرة البلاد، تحت شمس تتجاوز حرارتها 45 درجة في الصيف. نحن نجدها، ومع أطباء بيطريين وعائلات مستضيفة نعالجها ونجهّزها للسفر إلى إيطاليا، حيث تنتظرها عائلة جديدة.",
@@ -654,6 +680,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       loc_label:"أين أنت؟",loc_all:"كل الأدوار",loc_ae:"في الإمارات",loc_it:"في إيطاليا",loc_any:"في أي مكان",tm_r1:"رحلة واحدة",tm_r2:"للأبد أو لبضعة أسابيع",tm_r3:"بضع ساعات أسبوعيًا",tm_r4:"بضعة أسابيع",tm_r5:"5 دقائق",apply:"أريد المساعدة",msg_intro:"انسخ هذه الرسالة وأرسلها إلينا على إنستغرام:",copy_msg:"نسخ الرسالة",open_ig:"افتح إنستغرام",msg_tpl:"مرحبًا Paws Without Borders! رأيت موقعكم وأود المساعدة في دور: {role}.\nأكتب لكم من: \nأوقات تفرغي: ",
       rate_note:"الأسعار بالدرهم الإماراتي (AED). تحويل تقريبي: 1 درهم = {r} يورو.",
       read_story:"اقرأ القصة كاملة",back:"العودة إلى المهام",share:"مشاركة",link_copied:"تم نسخ الرابط",raised_big:"{x}",of_goal:"تم جمعها من أصل {x}",pct:"{p}٪",cats_n:"{n} قطط",flight_on:"الرحلة في {d}",donate_cta:"تبرّع عبر GoFundMe",story_h:"القصة",photos_h:"الصور",not_found:"هذه المهمة لم تعد متاحة.",help_share:"لا تستطيع التبرع؟ مشاركة الحملة تساعد كثيرًا.",
+      read_trip:"اقرأ القصة كاملة",back_trips:"العودة إلى الرحلات",photos_n:"{n} صور",mission_done:"تمت المهمة",cats_home:"قطط وصلت إلى البيت",next_mission:"ادعم المهمة القادمة",adopted:"قطط هذه الرحلة",
       st:{raccolta:"جمع التبرعات",cure:"قيد العلاج",documenti:"تجهيز الوثائق",volo:"تم حجز الرحلة",casa:"وصلت إلى البيت"}}
   };
   const GROUPS = [
@@ -741,47 +768,72 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     try{ return new Date(+m[1], +m[2]-1, +m[3]).toLocaleDateString(LOCALE[lang], {day:"numeric", month:"long", year:"numeric"}); }catch(e){ return d; }
   }
   let pendingTripDelete = null;
+  const catNames = tr => String(tr.cats||"").split(",").map(x=>x.trim()).filter(Boolean);
+  const catCount = tr => Number(tr.count)>0 ? Number(tr.count) : catNames(tr).length;
+  const tripPhotos = tr => [].concat(tr.photos||[]).filter(isImg);
+  const tripTitle = tr => tr.title || ((tr.from||t("from")) + (lang==="ar" ? " ← " : " → ") + (tr.to||t("to")));
+  const tripNote = tr => lang==="it" ? (tr.note||tr.note_en||"") : (tr.note_en||tr.note||"");
+  const tripHref = tr => "#viaggio-" + encodeURIComponent(tr.id);
+  const CAM = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
+  function namesBox(tr, clamp){
+    const box = el("div","names"+(clamp?" clamp":"")); catNames(tr).forEach(n => box.append(el("span",null,n))); return box;
+  }
   function renderTrips(){
     const box = $("trips"); box.replaceChildren();
     const trips = state.trips.slice().sort((a,b)=>(b.date||"").localeCompare(a.date||""));
     $("tripsEmpty").hidden = trips.length > 0;
-    const arrow = lang==="ar" ? " ← " : " → ";
     trips.forEach(tr => {
-      const card = el("article","trip");
-      const photos = [].concat(tr.photos||[]).filter(u => typeof u==="string" && /^(\/|https:\/\/|data:image\/)/.test(u)).slice(0,4);
-      if(photos.length){
-        const g = el("div","trip-photos");
-        g.style.gridTemplateColumns = photos.length===2 ? "1fr 1fr" : "repeat(" + Math.max(1, photos.length-1) + ",1fr)"; if(photos.length===2) g.classList.add("pair");
-        photos.forEach((u,i) => { const im = el("img"); im.src = u; im.loading = "lazy"; im.alt = (tr.cats||"") + (i ? "" : " · " + fmtDate(tr.date)); g.append(im); });
-        card.append(g);
-      } else {
-        const ph = el("div","trip-noimg"); ph.innerHTML = '<svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="21" rx="6.5" ry="5.5"/><circle cx="8.5" cy="13" r="2.8"/><circle cx="13" cy="8.5" r="2.8"/><circle cx="19" cy="8.5" r="2.8"/><circle cx="23.5" cy="13" r="2.8"/></svg>'; card.append(ph);
-      }
-      const b = el("div","trip-body");
-      b.append(el("span","date",fmtDate(tr.date)));
-      b.append(el("h3",null,(tr.from||t("from")) + arrow + (tr.to||t("to"))));
-      if(tr.cats) b.append(el("p","trip-cats",tr.cats));
-      const note = lang==="it" ? (tr.note||tr.note_en) : (tr.note_en||tr.note);
-      if(note){ const p = el("p","m-desc",note); if(lang!=="it" && !tr.note_en) p.lang="it"; b.append(p); }
-      if(canEdit){
-        const ed = el("div","m-actions"); ed.lang="it";
-        const eb = el("button","btn btn-line btn-sm","Modifica"); eb.type="button"; eb.addEventListener("click",()=>fillTrip(tr)); ed.append(eb);
-        if(pendingTripDelete===tr.id){
-          const c = el("span","confirm","Eliminare questo viaggio?");
-          const yes = el("button","btn btn-ink btn-sm","Sì, elimina"); yes.type="button";
-          const no = el("button","btn btn-line btn-sm","No"); no.type="button";
-          yes.addEventListener("click",()=>{ state.trips = state.trips.filter(x=>x.id!==tr.id); pendingTripDelete=null; save("Viaggio eliminato", $("tripMsg")); });
-          no.addEventListener("click",()=>{ pendingTripDelete=null; render(); });
-          c.append(yes,no); ed.append(c);
-        } else {
-          const db = el("button","btn btn-line btn-sm","Elimina"); db.type="button"; db.addEventListener("click",()=>{ pendingTripDelete=tr.id; render(); }); ed.append(db);
-        }
-        b.append(ed);
-      }
-      card.append(b); box.append(card);
+      const card = el("article","mh th");
+      const media = el("a","mh-media"); media.href = tripHref(tr); media.setAttribute("aria-label", t("read_trip") + ": " + tripTitle(tr));
+      const ph = tripPhotos(tr);
+      if(ph.length){
+        const bg = pic(ph[0], 640, ""); bg.className = "blur"; bg.setAttribute("aria-hidden","true");
+        const im = pic(ph[0], 1280, catNames(tr).join(", ")); im.classList.add("main");
+        media.append(bg, im);
+        if(ph.length>1){ const pc = el("span","pcount"); pc.innerHTML = CAM; pc.append(t("photos_n").replace("{n}", ph.length)); media.append(pc); }
+      } else { media.classList.add("mh-noimg"); media.innerHTML = '<svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="21" rx="6.5" ry="5.5"/><circle cx="8.5" cy="13" r="2.8"/><circle cx="13" cy="8.5" r="2.8"/><circle cx="19" cy="8.5" r="2.8"/><circle cx="23.5" cy="13" r="2.8"/></svg>'; }
+      const st = el("span","status done",t("mission_done")); media.append(st);
+      const body = el("div","mh-body");
+      body.append(el("span","date-big",fmtDate(tr.date)));
+      const h = el("h3","mh-title"); const ha = el("a",null,tripTitle(tr)); ha.href = tripHref(tr); h.append(ha); body.append(h);
+      const meta = el("div","mh-meta");
+      const n = catCount(tr); if(n>0){ const tg = el("span","tag"); tg.append(el("span",null,t("cats_n").replace("{n}",n))); meta.append(tg); }
+      if(tr.title && (tr.from||tr.to)){ const tg = el("span","tag"); tg.append(el("span",null,(tr.from||t("from")) + (lang==="ar"?" ← ":" → ") + (tr.to||t("to")))); meta.append(tg); }
+      if(meta.children.length) body.append(meta);
+      if(catNames(tr).length) body.append(namesBox(tr, true));
+      const note = tripNote(tr);
+      if(note){ const ex = el("p","excerpt",excerpt(note, 220)); if(lang!=="it" && !tr.note_en) ex.lang = "it"; body.append(ex); }
+      const rm = el("a","readmore",t("read_trip")+" →"); rm.href = tripHref(tr); body.append(rm);
+      card.append(media, body); box.append(card);
     });
   }
-
+  function renderTripDetail(d, tr){
+    const ph = tripPhotos(tr);
+    if(ph.length){ const hero = el("div","d-hero"); hero.append(pic(ph[0], 1920, catNames(tr).join(", "))); d.append(hero); }
+    const grid = el("div","d-grid"); const main = el("div");
+    const head = el("div","d-head");
+    const st = el("span","status done",t("mission_done")); st.style.justifySelf = "start";
+    head.append(st, el("span","date-big",fmtDate(tr.date)), el("h1",null,tripTitle(tr)));
+    main.append(head);
+    if(catNames(tr).length){ main.append(el("h3",null,t("adopted"))); const nb = namesBox(tr,false); nb.style.margin = "10px 0 22px"; main.append(nb); }
+    const note = tripNote(tr);
+    if(note){ const sb = el("div","story"); if(lang!=="it" && !tr.note_en) sb.lang = "it"; sb.append(storyNodes(note)); main.append(sb); }
+    if(ph.length>1){
+      main.append(el("h2",null,t("photos_h")));
+      const g = el("div","d-gallery full");
+      ph.forEach(u => { const a = el("a"); a.href = u; a.target = "_blank"; a.rel = "noopener"; a.append(pic(u, 640, "")); g.append(a); });
+      main.append(g);
+    }
+    const side = el("aside","d-side");
+    const dn = el("div","d-done"); const n = catCount(tr);
+    if(n>0) dn.append(el("div","big",String(n)), el("div",null,t("cats_home")));
+    dn.append(el("div","muted",fmtDate(tr.date) + " · " + (tr.from||t("from")) + (lang==="ar"?" ← ":" → ") + (tr.to||t("to"))));
+    side.append(dn);
+    const cta = el("a","btn btn-gold btn-lg",t("next_mission")); cta.href = "#missioni";
+    cta.addEventListener("click", e => { e.preventDefault(); history.pushState("", document.title, location.pathname + location.search); route(); setTimeout(()=>{ const x = $("missioni"); if(x) x.scrollIntoView(); }, 0); });
+    side.append(cta, el("p","muted",t("help_share")));
+    grid.append(main, side); d.append(grid);
+  }
 
   const AMOUNTS = [10,25,50,100,250];
   let amount = 50;
@@ -807,7 +859,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
   }
   function renderStats(){
     const box = $("stats"); box.replaceChildren();
-    const home = state.trips.reduce((s,tr)=>s+(tr.cats||"").split(",").map(x=>x.trim()).filter(Boolean).length,0);
+    const home = state.trips.reduce((s,tr)=>s+catCount(tr),0);
     const active = state.missions.filter(m=>m.status!=="casa").length;
     [[home,"stat_home"],[active,"stat_active"]].forEach(([n,k]) => { if(n>0){ const c = el("span","stat"); c.append(el("b",null,String(n)), el("span",null,t(k))); box.append(c); } });
   }
@@ -963,7 +1015,20 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
   let lastScroll = 0;
   function route(){
     const mm = /^#missione-(.+)$/.exec(location.hash);
+    const vv = /^#viaggio-(.+)$/.exec(location.hash);
     const d = $("detail");
+    if(vv){
+      if(d.hidden) lastScroll = window.scrollY;
+      d.replaceChildren(); d.hidden = false; document.body.classList.add("detail-mode");
+      const back = el("a","back","← " + t("back_trips")); back.href = "#viaggi";
+      back.addEventListener("click", e => { e.preventDefault(); history.pushState("", document.title, location.pathname + location.search); route(); setTimeout(()=>{ const x = $("viaggi"); if(x) x.scrollIntoView(); }, 0); });
+      d.append(back);
+      const tr = state.trips.find(x => x.id === decodeURIComponent(vv[1]));
+      if(!tr){ if(state.loaded) d.append(el("p","muted",t("not_found"))); return; }
+      renderTripDetail(d, tr); window.scrollTo(0,0);
+      document.title = tripTitle(tr) + " · Paws Without Borders";
+      return;
+    }
     if(!mm){
       if(!d.hidden){ d.hidden = true; document.body.classList.remove("detail-mode"); window.scrollTo(0, lastScroll); }
       return;
@@ -996,7 +1061,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     window.scrollTo(0,0);
     document.title = (m.name ? m.name + " · " : "") + "Paws Without Borders";
   }
-  window.addEventListener("hashchange", () => { route(); if(!/^#missione-/.test(location.hash)) document.title = "Paws Without Borders"; });
+  window.addEventListener("hashchange", () => { route(); if(!/^#(missione|viaggio)-/.test(location.hash)) document.title = "Paws Without Borders"; });
 
   function copyText(text, note){
     const ok = () => { note.textContent=t("copied"); setTimeout(()=>note.textContent="",2000); };

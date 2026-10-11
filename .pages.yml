@@ -85,10 +85,16 @@ content:
       fields: [cats, date, to]
       primary: cats
     fields:
+      - name: title
+        label: Titolo del viaggio (facoltativo, es. "15 gatti a casa!")
+        type: string
       - name: cats
         label: Gatti adottati (nomi separati da virgola)
         type: string
         required: true
+      - name: count
+        label: Numero di gatti (facoltativo, se vuoto conta i nomi)
+        type: number
       - name: date
         label: Data del volo
         type: date
@@ -100,17 +106,17 @@ content:
         label: A
         type: string
       - name: note
-        label: Racconto breve in italiano
+        label: Racconto completo in italiano (sul sito compare un'anteprima, il testo intero nella pagina del viaggio)
         type: text
       - name: note_en
         label: Racconto breve in inglese (facoltativo)
         type: text
       - name: photos
-        label: Foto (fino a 4)
+        label: Foto (la prima è la copertina, fino a 12)
         type: image
         options:
           multiple:
-            max: 4
+            max: 12
       - name: visibile
         label: Mostra sul sito
         type: boolean
