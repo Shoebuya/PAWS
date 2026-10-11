@@ -219,6 +219,10 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
 .role-body{display:grid;gap:10px;min-width:0;justify-items:start}
 .tags{display:flex;gap:6px;flex-wrap:wrap}
 .tag{display:inline-flex;align-items:center;gap:6px;font:600 .78rem var(--body);padding:4px 10px 4px 8px;border-radius:999px;background:var(--gold-soft);color:var(--ink)}
+.tag.type-volo{background:var(--globe);color:var(--on-ink)}
+.tag.type-volo svg{stroke:var(--on-ink)}
+.tag.type-veterinario{background:var(--ginger);color:var(--on-ink)}
+.tag.type-veterinario svg{stroke:var(--on-ink)}
 .tag svg{width:14px;height:14px;fill:none;stroke:var(--ginger);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .role.lead-role .tag{background:color-mix(in srgb,var(--on-ink) 14%,transparent);color:var(--on-ink)}
 .role.lead-role .tag svg{stroke:var(--gold)}
@@ -565,6 +569,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       rate_note:"Prezzi in dirham degli Emirati (AED). Conversione indicativa: 1 AED = € {r}.",
       read_story:"Leggi la storia completa",back:"Torna alle missioni",share:"Condividi",link_copied:"Link copiato",raised_big:"{x}",of_goal:"raccolti su {x}",pct:"{p}%",cats_n:"{n} gatti",flight_on:"Volo del {d}",donate_cta:"Dona su GoFundMe",story_h:"La storia",photos_h:"Foto",not_found:"Questa missione non è più disponibile.",help_share:"Non puoi donare? Condividere la raccolta aiuta tantissimo.",
       read_trip:"Leggi il racconto completo",back_trips:"Torna ai viaggi",photos_n:"{n} foto",mission_done:"Missione compiuta",cats_home:"gatti arrivati a casa",next_mission:"Sostieni la prossima missione",adopted:"I gatti di questo viaggio",
+      stat_care:"In cura",type_flight:"Raccolta per il volo",type_vet:"Cure veterinarie",
       st:{raccolta:"Raccolta fondi",cure:"In cura",documenti:"Documenti in corso",volo:"Volo prenotato",casa:"Arrivato a casa"}},
     en:{from:"Emirates",to:"Italy",hook:"Families leave. Their cats stay on the street.",
       lead:"Too often, families leaving the country abandon their cats on the street, under a sun that tops 45 degrees in summer. We find them and, together with vets and fosters, we treat them and get them ready to fly to Italy, where a new family is waiting.",
@@ -594,6 +599,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       rate_note:"Prices in UAE dirham (AED). Approximate conversion: 1 AED = € {r}.",
       read_story:"Read the full story",back:"Back to missions",share:"Share",link_copied:"Link copied",raised_big:"{x}",of_goal:"raised of {x}",pct:"{p}%",cats_n:"{n} cats",flight_on:"Flight on {d}",donate_cta:"Donate on GoFundMe",story_h:"The story",photos_h:"Photos",not_found:"This mission is no longer available.",help_share:"Can't donate? Sharing the fundraiser helps a lot.",
       read_trip:"Read the full story",back_trips:"Back to journeys",photos_n:"{n} photos",mission_done:"Mission accomplished",cats_home:"cats made it home",next_mission:"Support the next mission",adopted:"The cats on this journey",
+      stat_care:"In treatment",type_flight:"Flight fundraiser",type_vet:"Vet care",
       st:{raccolta:"Fundraising",cure:"In treatment",documenti:"Paperwork in progress",volo:"Flight booked",casa:"Home at last"}},
     fr:{from:"Émirats",to:"Italie",hook:"Les familles partent. Les chats restent dans la rue.",
       lead:"Trop souvent, des familles qui quittent le pays abandonnent leurs chats dans la rue, sous un soleil qui dépasse les 45 degrés en été. Nous les trouvons et, avec des vétérinaires et des familles d'accueil, nous les soignons et les préparons au vol vers l'Italie, où une nouvelle famille les attend.",
@@ -623,6 +629,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       rate_note:"Prix en dirhams des Émirats (AED). Conversion indicative : 1 AED = {r} €.",
       read_story:"Lire toute l'histoire",back:"Retour aux missions",share:"Partager",link_copied:"Lien copié",raised_big:"{x}",of_goal:"collectés sur {x}",pct:"{p} %",cats_n:"{n} chats",flight_on:"Vol du {d}",donate_cta:"Donner sur GoFundMe",story_h:"L'histoire",photos_h:"Photos",not_found:"Cette mission n'est plus disponible.",help_share:"Vous ne pouvez pas donner ? Partager la cagnotte aide énormément.",
       read_trip:"Lire tout le récit",back_trips:"Retour aux voyages",photos_n:"{n} photos",mission_done:"Mission accomplie",cats_home:"chats arrivés chez eux",next_mission:"Soutenir la prochaine mission",adopted:"Les chats de ce voyage",
+      stat_care:"En soins",type_flight:"Collecte pour le vol",type_vet:"Soins vétérinaires",
       st:{raccolta:"Collecte en cours",cure:"En soins",documenti:"Documents en cours",volo:"Vol réservé",casa:"Enfin chez lui"}},
     ru:{from:"Эмираты",to:"Италия",hook:"Семьи уезжают. Кошки остаются на улице.",
       lead:"Слишком часто семьи, уезжая из страны, бросают своих кошек на улице, под солнцем, которое летом раскаляет воздух выше 45 градусов. Мы находим их и вместе с ветеринарами и передержками лечим и готовим к перелёту в Италию, где их ждёт новая семья.",
@@ -652,6 +659,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       rate_note:"Цены в дирхамах ОАЭ (AED). Примерный курс: 1 AED = € {r}.",
       read_story:"Читать всю историю",back:"Назад к миссиям",share:"Поделиться",link_copied:"Ссылка скопирована",raised_big:"{x}",of_goal:"собрано из {x}",pct:"{p}%",cats_n:"Кошек: {n}",flight_on:"Рейс {d}",donate_cta:"Помочь на GoFundMe",story_h:"История",photos_h:"Фото",not_found:"Эта миссия больше недоступна.",help_share:"Не можете пожертвовать? Репост сбора тоже очень помогает.",
       read_trip:"Читать весь рассказ",back_trips:"Назад к путешествиям",photos_n:"Фото: {n}",mission_done:"Миссия выполнена",cats_home:"кошек уже дома",next_mission:"Поддержать следующую миссию",adopted:"Кошки этого рейса",
+      stat_care:"На лечении",type_flight:"Сбор на перелёт",type_vet:"Ветеринарная помощь",
       st:{raccolta:"Идёт сбор",cure:"На лечении",documenti:"Оформляем документы",volo:"Рейс забронирован",casa:"Уже дома"}},
     ar:{from:"الإمارات",to:"إيطاليا",hook:"العائلات ترحل، والقطط تبقى في الشارع.",
       lead:"كثيرًا ما تتخلى عائلات عن قططها في الشارع عند مغادرة البلاد، تحت شمس تتجاوز حرارتها 45 درجة في الصيف. نحن نجدها، ومع أطباء بيطريين وعائلات مستضيفة نعالجها ونجهّزها للسفر إلى إيطاليا، حيث تنتظرها عائلة جديدة.",
@@ -681,6 +689,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       rate_note:"الأسعار بالدرهم الإماراتي (AED). تحويل تقريبي: 1 درهم = {r} يورو.",
       read_story:"اقرأ القصة كاملة",back:"العودة إلى المهام",share:"مشاركة",link_copied:"تم نسخ الرابط",raised_big:"{x}",of_goal:"تم جمعها من أصل {x}",pct:"{p}٪",cats_n:"{n} قطط",flight_on:"الرحلة في {d}",donate_cta:"تبرّع عبر GoFundMe",story_h:"القصة",photos_h:"الصور",not_found:"هذه المهمة لم تعد متاحة.",help_share:"لا تستطيع التبرع؟ مشاركة الحملة تساعد كثيرًا.",
       read_trip:"اقرأ القصة كاملة",back_trips:"العودة إلى الرحلات",photos_n:"{n} صور",mission_done:"تمت المهمة",cats_home:"قطط وصلت إلى البيت",next_mission:"ادعم المهمة القادمة",adopted:"قطط هذه الرحلة",
+      stat_care:"قيد العلاج",type_flight:"حملة لتمويل الرحلة",type_vet:"رعاية بيطرية",
       st:{raccolta:"جمع التبرعات",cure:"قيد العلاج",documenti:"تجهيز الوثائق",volo:"تم حجز الرحلة",casa:"وصلت إلى البيت"}}
   };
   const GROUPS = [
@@ -860,8 +869,11 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
   function renderStats(){
     const box = $("stats"); box.replaceChildren();
     const home = state.trips.reduce((s,tr)=>s+catCount(tr),0);
-    const active = state.missions.filter(m=>m.status!=="casa").length;
-    [[home,"stat_home"],[active,"stat_active"]].forEach(([n,k]) => { if(n>0){ const c = el("span","stat"); c.append(el("b",null,String(n)), el("span",null,t(k))); box.append(c); } });
+    const open = state.missions.filter(m=>m.status!=="casa");
+    const nCats = m => Number(m.cats)>0 ? Number(m.cats) : 1;
+    const flying = open.filter(m=>missionType(m)==="volo").reduce((s,m)=>s+nCats(m),0);
+    const care = open.filter(m=>missionType(m)==="veterinario").reduce((s,m)=>s+nCats(m),0);
+    [[home,"stat_home"],[flying,"stat_active"],[care,"stat_care"]].forEach(([n,k]) => { if(n>0){ const c = el("span","stat"); c.append(el("b",null,String(n)), el("span",null,t(k))); box.append(c); } });
   }
   (function setupMotion(){
     const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -960,6 +972,10 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     const meta = el("div","mh-meta");
     const arrow = lang==="ar" ? " ← " : " → ";
     const add = (txt) => { const tg = el("span","tag"); tg.append(el("span",null,txt)); meta.append(tg); };
+    const ty = el("span","tag type-"+missionType(m)); ty.innerHTML = missionType(m)==="veterinario"
+      ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/><path d="M12 9v5M9.5 11.5h5"/></svg>'
+      : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 16.5l19-7-2-3-7 2.5-5-4-2 1 3 5-4 1.5-2-1.5-1.5.8z"/></svg>';
+    ty.append(el("span",null,t(missionType(m)==="veterinario" ? "type_vet" : "type_flight"))); meta.append(ty);
     if(m.from || m.to) add((m.from||t("from")) + arrow + (m.to||t("to")));
     if(m.date) add(t("flight_on").replace("{d}", fmtDate(m.date)));
     if(Number(m.cats)>0) add(t("cats_n").replace("{n}", Number(m.cats)));
@@ -983,6 +999,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     });
     wrap.append(b, note); return wrap;
   }
+  const missionType = m => m.tipo==="veterinario" || m.tipo==="volo" ? m.tipo : (m.status==="cure" ? "veterinario" : "volo");
   const missionHref = m => "#missione-" + encodeURIComponent(m.id);
 
   function renderMissions(){

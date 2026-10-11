@@ -9,5 +9,7 @@
   "goal": 1500,
   "raised": 647,
   "order": 1,
-  "visibile": true
+  "visibile": true,
+  "tipo": "volo",
+  "cats": 10
 }

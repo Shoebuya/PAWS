@@ -17,6 +17,14 @@ content:
         label: Nome del gatto o della missione
         type: string
         required: true
+      - name: tipo
+        label: Tipo di richiesta
+        type: select
+        default: volo
+        options:
+          values:
+            - { name: volo, label: "Volo: gatti in attesa di partire" }
+            - { name: veterinario, label: "Veterinario: gatti in cura" }
       - name: status
         label: Stato
         type: select
@@ -44,7 +52,7 @@ content:
         label: Data del volo (facoltativa)
         type: date
       - name: cats
-        label: Numero di gatti (facoltativo)
+        label: Numero di gatti (aggiorna i contatori "In attesa di volo" / "In cura")
         type: number
       - name: desc
         label: Storia completa in italiano (sul sito compare un'anteprima, il testo intero si apre nella pagina della missione)
