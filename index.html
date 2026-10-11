@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Paws Without Borders salva i gatti abbandonati negli Emirati e li porta in Italia. Sostieni una missione su GoFundMe.">
+<meta property="og:title" content="Paws Without Borders">
+<meta property="og:description" content="Salviamo i gatti abbandonati negli Emirati e li portiamo in Italia. Aiutaci a farli volare a casa.">
+<meta property="og:image" content="/logo.jpg">
+<link rel="icon" href="/logo.jpg">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Paws Without Borders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800;125,800&family=Figtree:wght@400;500;600;700&family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: una sola pagina — gancio emotivo con logo, i tre bisogni, le missioni GoFundMe, i ruoli per chi vuole aiutare. Colori dal logo: crema, blu del globo, oro, blu notte. */
+:root{
+  --bg:#FBF8F1; --surface:#FFFFFF; --ink:#16313F; --muted:#5B6E78; --line:#E6DCC8;
+  --globe:#5F97B5; --gold:#B8904F; --ginger:#C77F45; --gold-soft:#F3EAD7; --on-ink:#FBF8F1;
+  --display:"Archivo", "Avenir Next", "Segoe UI", sans-serif;
+  --body:"Figtree", "Helvetica Neue", Arial, sans-serif;
+  --track:.16em;
+  --r:16px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1E27; --surface:#172A35; --ink:#F1EBDD; --muted:#A3B3BB; --line:#2A3F4B;
+  --globe:#86BAD6; --gold:#D6B072; --ginger:#E09A62; --gold-soft:#252A26; --on-ink:#0F1E27; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1E27; --surface:#172A35; --ink:#F1EBDD; --muted:#A3B3BB; --line:#2A3F4B;
+  --globe:#86BAD6; --gold:#D6B072; --ginger:#E09A62; --gold-soft:#252A26; --on-ink:#0F1E27; color-scheme:dark}
+:root[lang="ru"]{--display:"Unbounded", "Arial Black", sans-serif; --body:"Manrope", "Helvetica Neue", Arial, sans-serif}
+:root[lang="ar"]{--display:"Noto Kufi Arabic", "Geeza Pro", Tahoma, sans-serif; --body:"IBM Plex Sans Arabic", "Geeza Pro", Tahoma, sans-serif; --track:0}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);padding-inline:16px}
+.wrap{max-width:1040px;margin-inline:auto;padding-block:20px 56px;display:grid;gap:64px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.12;text-wrap:balance}
+h1{font-size:clamp(2rem,5.2vw,3.3rem);font-weight:800;font-stretch:125%;letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.3vw,2rem);font-weight:800;font-stretch:112%}
+h3{font-size:1.12rem;font-weight:800;font-stretch:112%}
+:root[lang="ru"] h1{font-size:clamp(1.7rem,4.4vw,2.7rem)}
+:root[lang="ar"] h1,:root[lang="ar"] h2,:root[lang="ar"] h3{line-height:1.45;letter-spacing:0}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font:700 .74rem/1.3 var(--body);letter-spacing:var(--track);text-transform:uppercase;color:var(--gold)}
+.muted{color:var(--muted)}
+:focus-visible{outline:3px solid var(--globe);outline-offset:3px;border-radius:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:700 .98rem var(--body);padding:12px 22px;border-radius:999px;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--on-ink)}
+.btn-ink{background:var(--ink);color:var(--on-ink)}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-sm{padding:8px 15px;font-size:.88rem}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+
+.topbar{display:flex;justify-content:flex-end}
+.langs{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;flex-wrap:wrap}
+.langs button{border:0;background:transparent;color:var(--muted);font:700 .8rem "Figtree", "IBM Plex Sans Arabic", sans-serif;padding:6px 11px;border-radius:999px;cursor:pointer;letter-spacing:.04em}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--on-ink)}
+
+.hero{display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:center}
+.hero > *{min-width:0}
+.logo{width:100%;max-width:250px;aspect-ratio:1;border-radius:50%;display:block;box-shadow:0 14px 34px -18px rgba(22,49,63,.45)}
+.hero-text{display:grid;gap:18px}
+.brand{font:800 1rem "Archivo",sans-serif;font-stretch:112%;color:var(--globe);letter-spacing:.02em}
+.lead{font-size:1.14rem;color:var(--muted);max-width:60ch}
+.lead strong{color:var(--ink);font-weight:700}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.route{display:inline-flex;align-items:center;gap:10px;font:700 .8rem var(--body);letter-spacing:var(--track);text-transform:uppercase;color:var(--gold)}
+.route .dash{width:48px;border-top:2px dashed var(--gold)}
+
+.sec-head{display:grid;gap:10px;margin-bottom:22px;max-width:68ch}
+
+.needs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.need{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:10px;align-content:start}
+.ico{width:44px;height:44px;border-radius:50%;background:var(--gold-soft);display:grid;place-items:center}
+.ico svg{width:22px;height:22px;stroke:var(--ginger);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.need p{color:var(--muted);font-size:.97rem}
+.needs{grid-template-columns:repeat(2,1fr)}
+.needs .need:last-child:nth-child(odd){grid-column:1 / -1}
+.items{list-style:none;margin:6px 0 0;padding:0;display:grid}
+.items li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-top:1px dashed var(--line);font-size:.97rem}
+.items li .lbl{display:flex;align-items:center;gap:10px;min-width:0}
+.iico{width:30px;height:30px;flex:none;border-radius:9px;background:var(--gold-soft);display:grid;place-items:center}
+.iico svg{width:17px;height:17px;stroke:var(--ginger);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.items .amt{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.items .per{font-weight:500;color:var(--muted);font-size:.85rem}
+.total{margin-top:18px;background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap}
+.total b{font:800 1.5rem var(--display);font-stretch:112%;font-variant-numeric:tabular-nums}
+.total small{display:block;color:color-mix(in srgb,var(--on-ink) 75%,transparent);font-size:.9rem}
+.cost-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px 16px}
+.cost-row{display:grid;grid-template-columns:1fr 110px;gap:8px;align-items:end}
+.cost-row label{grid-column:1 / -1}
+
+
+.missions{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.mission{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:12px;align-content:start;min-width:0}
+.m-top{display:flex;align-items:center;gap:12px}
+.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.avatar{overflow:hidden;width:48px;height:48px;flex:none;border-radius:50%;background:var(--globe);color:var(--on-ink);display:grid;place-items:center;font:800 1.2rem "Archivo",sans-serif}
+.m-route{font:600 .82rem var(--body);color:var(--muted)}
+.status{justify-self:start;font:700 .7rem var(--body);letter-spacing:calc(var(--track) * .6);text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--gold-soft);color:var(--ink)}
+.status[data-s="volo"]{background:var(--globe);color:var(--on-ink)}
+.status[data-s="casa"]{background:var(--ink);color:var(--on-ink)}
+.m-desc{color:var(--muted);font-size:.96rem;overflow-wrap:anywhere}
+.meter{display:grid;gap:6px}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gold);border-radius:99px}
+.meter-row{display:flex;justify-content:space-between;gap:8px;font:600 .82rem var(--body);color:var(--muted);font-variant-numeric:tabular-nums}
+.m-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.empty{border:1.5px dashed var(--line);border-radius:var(--r);padding:36px 24px;text-align:center;display:grid;gap:8px;justify-items:center}
+
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.role{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:start}
+.role p{color:var(--muted);font-size:.97rem}
+.role .ico{margin-bottom:4px}
+.role.lead-role{grid-column:1 / -1;background:var(--ink);border-color:var(--ink);color:var(--on-ink);grid-template-columns:auto 1fr;column-gap:18px;align-items:start;padding:26px}
+.role.lead-role p{color:color-mix(in srgb,var(--on-ink) 78%,transparent)}
+.role.lead-role .ico{grid-row:span 2;background:color-mix(in srgb,var(--on-ink) 12%,transparent)}
+.role.lead-role .ico svg{stroke:var(--gold)}
+.join{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:20px}
+
+.trips{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.trip{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;align-content:start;min-width:0}
+.trip-photos{display:grid;gap:3px}
+.trip-photos img{width:100%;max-width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--gold-soft)}
+.trip-photos img:first-child{grid-column:1 / -1;aspect-ratio:4/3}
+.trip-photos.pair img:first-child{grid-column:auto;aspect-ratio:1}
+.trip-noimg{aspect-ratio:4/3;max-width:100%;background:var(--gold-soft);display:grid;place-items:center}
+.trip-noimg svg{width:56px;height:56px;fill:var(--gold);opacity:.7}
+.trip-body{padding:18px 20px 20px;display:grid;gap:8px}
+.date{font:700 .74rem/1.3 var(--body);letter-spacing:var(--track);text-transform:uppercase;color:var(--gold)}
+.trip-cats{font-weight:600}
+.previews{display:flex;gap:8px;flex-wrap:wrap}
+.previews img{width:72px;height:72px;object-fit:cover;border-radius:8px;display:block}
+.admin-block{display:grid;gap:14px;border-top:1px solid var(--line);padding-top:20px}
+.admin{background:var(--gold-soft);border-radius:var(--r);padding:24px;display:grid;gap:18px}
+.admin form{display:grid;gap:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-weight:600;font-size:.9rem}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:1rem;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);width:100%;min-width:0}
+textarea{min-height:84px;resize:vertical}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.msg{font-size:.9rem;font-weight:600;color:var(--globe)}
+.msg.err{color:var(--ginger)}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.9rem;font-weight:600}
+
+footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font-size:.92rem}
+.ig{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ig code{font:700 1rem "Figtree",sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:6px 12px;border-radius:8px;user-select:all;direction:ltr}
+
+
+/* flight band */
+.flight{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:18px 18px 22px;display:grid;gap:14px;
+  background-image:radial-gradient(var(--line) 1px, transparent 1.2px);background-size:18px 18px}
+.flight svg.map{width:100%;height:auto;display:block;overflow:visible}
+.flight .trail-bg{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:2 10;stroke-linecap:round}
+.flight .trail{fill:none;stroke:var(--gold);stroke-width:3.5;stroke-linecap:round}
+.flight .plane{fill:var(--ink)}
+.flight .pin{fill:var(--globe)}
+.flight .pin-in{fill:var(--surface)}
+.flight .ring{fill:none;stroke:var(--gold);stroke-width:2.5}
+.flight .lbl{font:800 22px var(--display);fill:var(--ink);text-anchor:middle}
+.flight .sub{font:600 14px var(--body);fill:var(--muted);text-anchor:middle;letter-spacing:.06em}
+.flight-foot{display:flex;justify-content:space-between;align-items:center;gap:12px 20px;flex-wrap:wrap;padding-inline:6px}
+.flight-foot p{font:700 1.05rem var(--display);font-stretch:112%}
+.stats{display:flex;gap:10px;flex-wrap:wrap}
+.stat{display:flex;align-items:baseline;gap:8px;background:var(--gold-soft);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem}
+.stat b{font:800 1.2rem var(--display);font-variant-numeric:tabular-nums}
+
+/* impact */
+.impact{background:var(--ink);color:var(--on-ink);border-radius:22px;padding:28px;display:grid;gap:18px}
+.impact .eyebrow{color:var(--gold)}
+.impact h2{color:var(--on-ink)}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{border:0;cursor:pointer;font:800 1.05rem var(--display);font-variant-numeric:tabular-nums;padding:12px 20px;border-radius:999px;background:color-mix(in srgb,var(--on-ink) 12%,transparent);color:var(--on-ink);transition:transform .15s,background .15s}
+.chip:hover{transform:translateY(-2px)}
+.chip[aria-pressed="true"]{background:var(--gold);color:var(--on-ink)}
+.impact-out{display:grid;gap:12px;align-content:start;min-height:110px}
+.impact-out .with{font:800 1.3rem var(--display);font-stretch:112%}
+.impact-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.impact-list li{display:flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--on-ink) 10%,transparent);border-radius:12px;padding:8px 12px;font-weight:600;animation:pop .35s ease both}
+.impact-list li:nth-child(2){animation-delay:.06s}.impact-list li:nth-child(3){animation-delay:.12s}.impact-list li:nth-child(4){animation-delay:.18s}.impact-list li:nth-child(5){animation-delay:.24s}
+.impact-list .iico{background:color-mix(in srgb,var(--on-ink) 14%,transparent)}
+.impact-list .iico svg{stroke:var(--gold)}
+.impact .note{font-size:.85rem;color:color-mix(in srgb,var(--on-ink) 70%,transparent)}
+.impact .btn{justify-self:start}
+
+/* floating donate */
+.fab{position:fixed;inset-inline-end:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;box-shadow:0 12px 28px -10px rgba(22,49,63,.55);transform:translateY(160%);transition:transform .3s ease}
+.fab.show{transform:none}
+.fab svg{width:18px;height:18px;fill:currentColor}
+
+/* motion */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--gold) 55%,transparent)}100%{box-shadow:0 0 0 16px transparent}}
+@keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+.hero-text > *{animation:rise .7s ease both}
+.hero-text > *:nth-child(2){animation-delay:.08s}.hero-text > *:nth-child(3){animation-delay:.16s}.hero-text > *:nth-child(4){animation-delay:.24s}.hero-text > *:nth-child(5){animation-delay:.32s}
+.logo{animation:float 6s ease-in-out infinite}
+.btn-gold.beat{animation:pulse 2.2s ease-out infinite}
+@media (prefers-reduced-motion:reduce){.hero-text > *,.logo,.btn-gold.beat,.impact-list li{animation:none}.fab{transition:none}}
+
+.filter{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.filter-label{font-weight:700;margin-inline-end:6px}
+.fchip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:600 .9rem var(--body);padding:8px 16px;border-radius:999px;cursor:pointer;transition:background .15s}
+.fchip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.role{grid-template-columns:auto 1fr;column-gap:16px;align-items:start}
+.role .ico{margin:0}
+.role-body{display:grid;gap:10px;min-width:0;justify-items:start}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 .78rem var(--body);padding:4px 10px 4px 8px;border-radius:999px;background:var(--gold-soft);color:var(--ink)}
+.tag svg{width:14px;height:14px;fill:none;stroke:var(--ginger);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.role.lead-role .tag{background:color-mix(in srgb,var(--on-ink) 14%,transparent);color:var(--on-ink)}
+.role.lead-role .tag svg{stroke:var(--gold)}
+.role.lead-role h3{font-size:1.4rem}
+.role.lead-role .ico{grid-row:auto;width:56px;height:56px}
+.role.lead-role .ico svg{width:28px;height:28px}
+.apply-panel{display:grid;gap:10px;width:100%}
+.apply-msg{font-size:.92rem;line-height:1.5;resize:vertical}
+.role.lead-role .apply-msg{background:color-mix(in srgb,var(--on-ink) 8%,transparent);color:var(--on-ink);border-color:color-mix(in srgb,var(--on-ink) 25%,transparent)}
+.role.lead-role .apply-intro{color:color-mix(in srgb,var(--on-ink) 80%,transparent)}
+.role.lead-role .btn-line{color:var(--on-ink);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--on-ink) 35%,transparent)}
+.role.lead-role .btn-ink{background:var(--on-ink);color:var(--ink)}
+[hidden]{display:none!important}
+
+@media (max-width:760px){
+  .flight .lbl{font-size:30px}.flight .sub{font-size:20px}
+  .impact{padding:22px 18px}
+  .topbar{justify-content:center}
+  .hero{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .ctas{justify-content:center}
+  .logo{max-width:190px}
+  .needs,.roles,.grid2,.grid3{grid-template-columns:1fr}
+  .role,.role.lead-role{grid-template-columns:1fr;row-gap:12px}
+  .role.lead-role .ico{grid-row:auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="langs" role="group" aria-label="Lingua / Language">
+      <button type="button" data-lang="it" lang="it">IT</button>
+      <button type="button" data-lang="en" lang="en">EN</button>
+      <button type="button" data-lang="fr" lang="fr">FR</button>
+      <button type="button" data-lang="ru" lang="ru">RU</button>
+      <button type="button" data-lang="ar" lang="ar">عربي</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <img class="logo" src="data:image/jpeg;base64,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" alt="Paws Without Borders">
+    <div class="hero-text">
+      <span class="route"><span data-t="from">Emirati</span><span class="dash" aria-hidden="true"></span><span aria-hidden="true">✈</span><span class="dash" aria-hidden="true"></span><span data-t="to">Italia</span></span>
+      <h1 data-t="hook">Le famiglie partono. I gatti restano in strada.</h1>
+      <p class="lead" data-t="lead">Spesso, quando lasciano il Paese, molte famiglie abbandonano i loro gatti in strada, sotto un sole che d'estate supera i 45 gradi. Noi li troviamo e, insieme a veterinari e foster, li curiamo e li prepariamo al volo per l'Italia, dove una nuova famiglia li aspetta.</p>
+      <p class="lead"><strong data-t="lead2">Ogni viaggio costa cure, documenti e un biglietto. E ogni viaggio comincia da una persona che decide di aiutare.</strong></p>
+      <div class="ctas">
+        <a class="btn btn-gold beat" href="#missioni" data-t="cta_main">Sostieni una missione</a>
+        <a class="btn btn-line" href="#aiuta" data-t="cta_help">Unisciti a noi</a>
+      </div>
+      <p class="brand">Paws Without Borders</p>
+    </div>
+  </header>
+
+  <div class="flight" aria-label="Rotta dagli Emirati all'Italia" role="img" id="flightBand">
+    <svg class="map" viewBox="0 40 1000 190" id="flightSvg" aria-hidden="true">
+      <path class="trail-bg" d="M860 150 Q 500 -20 140 150"/>
+      <path class="trail" d="M860 150 Q 500 -20 140 150" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+        <animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;0.78;1" dur="5s" repeatCount="indefinite"/>
+      </path>
+      <circle class="ring" cx="140" cy="150" r="10" opacity="0">
+        <animate attributeName="r" values="10;10;34" keyTimes="0;0.78;1" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" keyTimes="0;0.78;1" dur="5s" repeatCount="indefinite"/>
+      </circle>
+      <g><path class="pin" d="M140 160 c-14 -18 -18 -26 -18 -34 a18 18 0 0 1 36 0 c0 8 -4 16 -18 34z"/><circle class="pin-in" cx="140" cy="126" r="7"/></g>
+      <g><path class="pin" d="M860 160 c-14 -18 -18 -26 -18 -34 a18 18 0 0 1 36 0 c0 8 -4 16 -18 34z"/><circle class="pin-in" cx="860" cy="126" r="7"/></g>
+      <text class="lbl" x="140" y="196" data-t="to">Italia</text>
+      <text class="lbl" x="860" y="196" data-t="from">Emirati</text>
+      <text class="sub" x="140" y="218">ITA</text>
+      <text class="sub" x="860" y="218">UAE</text>
+      <g id="plane"><path class="plane" d="M22 0 L6 -3.5 L-3 -16 L-8 -16 L-3.5 -3.5 L-13 -3.5 L-17.5 -9.5 L-21 -9.5 L-17.5 0 L-21 9.5 L-17.5 9.5 L-13 3.5 L-3.5 3.5 L-8 16 L-3 16 L6 3.5 Z">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.8;0.9" dur="5s" repeatCount="indefinite"/></path>
+        <animateMotion dur="5s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;0.78;1" calcMode="linear" path="M860 150 Q 500 -20 140 150"/>
+      </g>
+    </svg>
+    <div class="flight-foot">
+      <p data-t="fly_caption">Ogni volo è un biglietto di sola andata verso casa.</p>
+      <div class="stats" id="stats"></div>
+    </div>
+  </div>
+
+  <section aria-labelledby="bisogni-t">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="needs_e">Cosa serve per un viaggio</p>
+      <h2 id="bisogni-t" data-t="needs_h">Dalla strada all'aereo: ecco cosa paghiamo con le vostre donazioni</h2>
+    </div>
+    <div class="needs" id="needs"></div>
+    <div class="total" id="total" hidden></div>
+  </section>
+
+  <section class="impact" id="impact" hidden aria-labelledby="impact-t">
+    <div class="sec-head" style="margin:0">
+      <p class="eyebrow" data-t="imp_e">Il tuo aiuto, in concreto</p>
+      <h2 id="impact-t" data-t="imp_h">Scegli una cifra e scopri cosa paghi</h2>
+    </div>
+    <div class="chips" id="chips" role="group"></div>
+    <div class="impact-out" id="impactOut" aria-live="polite"></div>
+    <a class="btn btn-gold" href="#missioni" data-t="imp_cta">Dona su una missione</a>
+    <p class="note" data-t="imp_note">Calcolato sui nostri costi reali.</p>
+  </section>
+
+  <section id="missioni" aria-labelledby="missioni-t">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="m_e">Missioni attive</p>
+      <h2 id="missioni-t" data-t="m_h">Questi gatti aspettano il loro volo</h2>
+      <p class="muted" data-t="m_p">Ogni gatto ha la sua raccolta GoFundMe. Dona quello che puoi, oppure condividi il link: spesso è un amico di un amico a completare l'obiettivo.</p>
+    </div>
+    <div class="missions" id="list"></div>
+    <div class="empty" id="empty" hidden>
+      <h3 data-t="empty_h">Le prime missioni arrivano a breve</h3>
+      <p class="muted" data-t="empty_p">Qui troverai i gatti in partenza, ognuno con il suo link GoFundMe. Seguici su Instagram per non perderli.</p>
+    </div>
+  </section>
+
+  <section id="viaggi" aria-labelledby="viaggi-t">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="t_e">Viaggi completati</p>
+      <h2 id="viaggi-t" data-t="t_h">Sono arrivati a casa</h2>
+      <p class="muted" data-t="t_p">Ogni volo che atterra è merito di chi ha donato, condiviso o accompagnato un gatto. Ecco chi ce l'ha fatta.</p>
+    </div>
+    <div class="trips" id="trips"></div>
+    <div class="empty" id="tripsEmpty" hidden>
+      <h3 data-t="t_empty_h">Il primo viaggio è in preparazione</h3>
+      <p class="muted" data-t="t_empty_p">Qui pubblicheremo data, foto e storie dei gatti arrivati in Italia.</p>
+    </div>
+  </section>
+
+  <section id="aiuta" aria-labelledby="aiuta-t">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="h_e">Cerchiamo te</p>
+      <h2 id="aiuta-t" data-t="h_h">Servono mani, non solo donazioni</h2>
+      <p class="muted" data-t="h_p">Siamo un piccolo gruppo. Ogni ruolo qui sotto salva un gatto in più. Se ti riconosci in uno di questi, scrivici.</p>
+    </div>
+    <div class="filter" role="group" aria-labelledby="loc-label">
+      <span id="loc-label" class="filter-label" data-t="loc_label">Dove ti trovi?</span>
+      <button class="fchip" type="button" data-f="all" aria-pressed="true" data-t="loc_all">Tutti i ruoli</button>
+      <button class="fchip" type="button" data-f="ae" aria-pressed="false" data-t="loc_ae">Negli Emirati</button>
+      <button class="fchip" type="button" data-f="it" aria-pressed="false" data-t="loc_it">In Italia</button>
+    </div>
+    <div class="roles" id="roles">
+      <article class="role lead-role" data-loc="ae" data-role="r1">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 16.5l19-7-2-3-7 2.5-5-4-2 1 3 5-4 1.5-2-1.5-1.5.8z"/></svg></div>
+        <div class="role-body">
+          <h3 data-t="r1_h">Accompagnatore di volo</h3>
+          <div class="tags"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-10.5a6 6 0 0 1 12 0C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2"/></svg><span data-t="loc_ae">Negli Emirati</span></span><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span data-t="tm_r1">Un volo</span></span></div>
+          <p data-t="r1_p">Parti dagli Emirati per l'Italia? Molte compagnie fanno volare un gatto in cabina solo insieme a un passeggero. Il biglietto è tuo, al gatto e ai documenti pensiamo noi.</p>
+          <button class="btn btn-gold btn-sm apply" type="button" aria-expanded="false" data-t="apply">Mi candido</button>
+          <div class="apply-panel" hidden>
+            <p class="apply-intro" data-t="msg_intro">Copia questo messaggio e mandacelo in direct su Instagram:</p>
+            <textarea class="apply-msg" rows="5" readonly aria-label="Messaggio"></textarea>
+            <div class="m-actions"><button class="btn btn-ink btn-sm copy-msg" type="button" data-t="copy_msg">Copia messaggio</button><a class="btn btn-line btn-sm" href="https://www.instagram.com/" target="_blank" rel="noopener" data-t="open_ig">Apri Instagram</a><span class="msg" aria-live="polite"></span></div>
+          </div>
+        </div>
+      </article>
+      <article class="role " data-loc="ae" data-role="r4">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div>
+        <div class="role-body">
+          <h3 data-t="r4_h">Foster per lo stallo</h3>
+          <div class="tags"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-10.5a6 6 0 0 1 12 0C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2"/></svg><span data-t="loc_ae">Negli Emirati</span></span><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span data-t="tm_r4">Qualche settimana</span></span></div>
+          <p data-t="r4_p">Mentre aspettano il volo, i gatti hanno bisogno di una casa temporanea negli Emirati. Tu offri un posto sicuro per qualche settimana, noi ti aiutiamo con cibo e cure.</p>
+          <button class="btn btn-line btn-sm apply" type="button" aria-expanded="false" data-t="apply">Mi candido</button>
+          <div class="apply-panel" hidden>
+            <p class="apply-intro" data-t="msg_intro">Copia questo messaggio e mandacelo in direct su Instagram:</p>
+            <textarea class="apply-msg" rows="5" readonly aria-label="Messaggio"></textarea>
+            <div class="m-actions"><button class="btn btn-ink btn-sm copy-msg" type="button" data-t="copy_msg">Copia messaggio</button><a class="btn btn-line btn-sm" href="https://www.instagram.com/" target="_blank" rel="noopener" data-t="open_ig">Apri Instagram</a><span class="msg" aria-live="polite"></span></div>
+          </div>
+        </div>
+      </article>
+      <article class="role " data-loc="it" data-role="r2">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9H3z"/><path d="M12 17.5s-3.2-1.9-3.2-3.9a1.7 1.7 0 0 1 3.2-.8 1.7 1.7 0 0 1 3.2.8c0 2-3.2 3.9-3.2 3.9z"/></svg></div>
+        <div class="role-body">
+          <h3 data-t="r2_h">Famiglia in Italia</h3>
+          <div class="tags"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-10.5a6 6 0 0 1 12 0C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2"/></svg><span data-t="loc_it">In Italia</span></span><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span data-t="tm_r2">Per sempre o qualche settimana</span></span></div>
+          <p data-t="r2_p">Adotta, oppure ospita un gatto per qualche settimana mentre cerchiamo la sua casa definitiva.</p>
+          <button class="btn btn-line btn-sm apply" type="button" aria-expanded="false" data-t="apply">Mi candido</button>
+          <div class="apply-panel" hidden>
+            <p class="apply-intro" data-t="msg_intro">Copia questo messaggio e mandacelo in direct su Instagram:</p>
+            <textarea class="apply-msg" rows="5" readonly aria-label="Messaggio"></textarea>
+            <div class="m-actions"><button class="btn btn-ink btn-sm copy-msg" type="button" data-t="copy_msg">Copia messaggio</button><a class="btn btn-line btn-sm" href="https://www.instagram.com/" target="_blank" rel="noopener" data-t="open_ig">Apri Instagram</a><span class="msg" aria-live="polite"></span></div>
+          </div>
+        </div>
+      </article>
+      <article class="role " data-loc="ae" data-role="r3">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="10" r="1.7"/><circle cx="10" cy="6" r="1.7"/><circle cx="14" cy="6" r="1.7"/><circle cx="17.5" cy="10" r="1.7"/><path d="M12 11.5c-3 0-5.5 3.2-5.5 5.5 0 1.8 2.2 2.8 5.5 2.8s5.5-1 5.5-2.8c0-2.3-2.5-5.5-5.5-5.5z"/></svg></div>
+        <div class="role-body">
+          <h3 data-t="r3_h">Volontario negli Emirati</h3>
+          <div class="tags"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-10.5a6 6 0 0 1 12 0C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2"/></svg><span data-t="loc_ae">Negli Emirati</span></span><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span data-t="tm_r3">Qualche ora a settimana</span></span></div>
+          <p data-t="r3_p">Recuperi in strada, passaggi dal veterinario, trasporti in aeroporto: anche poche ore a settimana fanno la differenza.</p>
+          <button class="btn btn-line btn-sm apply" type="button" aria-expanded="false" data-t="apply">Mi candido</button>
+          <div class="apply-panel" hidden>
+            <p class="apply-intro" data-t="msg_intro">Copia questo messaggio e mandacelo in direct su Instagram:</p>
+            <textarea class="apply-msg" rows="5" readonly aria-label="Messaggio"></textarea>
+            <div class="m-actions"><button class="btn btn-ink btn-sm copy-msg" type="button" data-t="copy_msg">Copia messaggio</button><a class="btn btn-line btn-sm" href="https://www.instagram.com/" target="_blank" rel="noopener" data-t="open_ig">Apri Instagram</a><span class="msg" aria-live="polite"></span></div>
+          </div>
+        </div>
+      </article>
+      <article class="role " data-loc="any" data-role="r5">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4h4l7 5V5L7 10z"/><path d="M17 9a4 4 0 0 1 0 6M19.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></div>
+        <div class="role-body">
+          <h3 data-t="r5_h">Voce sui social</h3>
+          <div class="tags"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-10.5a6 6 0 0 1 12 0C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2"/></svg><span data-t="loc_any">Ovunque</span></span><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span data-t="tm_r5">5 minuti</span></span></div>
+          <p data-t="r5_p">Condividi le loro storie. Ogni condivisione porta la missione davanti a qualcuno che può aiutare.</p>
+          <button class="btn btn-line btn-sm apply" type="button" aria-expanded="false" data-t="apply">Mi candido</button>
+          <div class="apply-panel" hidden>
+            <p class="apply-intro" data-t="msg_intro">Copia questo messaggio e mandacelo in direct su Instagram:</p>
+            <textarea class="apply-msg" rows="5" readonly aria-label="Messaggio"></textarea>
+            <div class="m-actions"><button class="btn btn-ink btn-sm copy-msg" type="button" data-t="copy_msg">Copia messaggio</button><a class="btn btn-line btn-sm" href="https://www.instagram.com/" target="_blank" rel="noopener" data-t="open_ig">Apri Instagram</a><span class="msg" aria-live="polite"></span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="join">
+      <a class="btn btn-ink" href="https://www.instagram.com/" target="_blank" rel="noopener" data-t="join_cta">Scrivici su Instagram</a>
+      <span class="ig"><code id="handle">@pawswithoutborders</code><button class="btn btn-line btn-sm" type="button" id="copyHandle" data-t="copy">Copia</button><span class="msg" id="handleMsg" aria-live="polite"></span></span>
+    </div>
+  </section>
+
+
+  <a class="btn btn-gold fab" id="fab" href="#missioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><span data-t="donate_now">Dona ora</span></a>
+
+  <footer>
+    <span data-t="footer">Paws Without Borders · dagli Emirati Arabi Uniti all'Italia</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const RESET = ':root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.4 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}';
+
+  const T = {
+    it:{from:"Emirati",to:"Italia",hook:"Le famiglie partono. I gatti restano in strada.",
+      lead:"Spesso, quando lasciano il Paese, molte famiglie abbandonano i loro gatti in strada, sotto un sole che d'estate supera i 45 gradi. Noi li troviamo e, insieme a veterinari e foster, li curiamo e li prepariamo al volo per l'Italia, dove una nuova famiglia li aspetta.",
+      lead2:"Ogni viaggio costa cure, documenti e un biglietto. E ogni viaggio comincia da una persona che decide di aiutare.",
+      cta_main:"Sostieni una missione",cta_help:"Unisciti a noi",
+      needs_e:"Cosa serve per un viaggio",needs_h:"Tre cose separano un gatto di strada da una casa",
+      n1_h:"Cure veterinarie",n1_p:"Molti arrivano feriti, disidratati o malati. Visite, esami, sterilizzazione e terapie vengono prima di tutto.",
+      n2_h:"Documenti di viaggio",n2_p:"Microchip, vaccino antirabbia e certificato sanitario UE. Senza, nessun gatto può entrare in Italia.",
+      n3_h:"Un posto sull'aereo",n3_p:"Trasportino omologato e volo, in cabina o in stiva. È la spesa più grande di ogni missione.",
+      m_e:"Missioni attive",m_h:"Questi gatti aspettano il loro volo",m_p:"Ogni gatto ha la sua raccolta GoFundMe. Dona quello che puoi, oppure condividi il link: spesso è un amico di un amico a completare l'obiettivo.",
+      empty_h:"Le prime missioni arrivano a breve",empty_p:"Qui troverai i gatti in partenza, ognuno con il suo link GoFundMe. Seguici su Instagram per non perderli.",
+      h_e:"Cerchiamo te",h_h:"Servono mani, non solo donazioni",h_p:"Siamo un piccolo gruppo. Ogni ruolo qui sotto salva un gatto in più. Se ti riconosci in uno di questi, scrivici.",
+      r1_h:"Accompagnatore di volo",r1_p:"Parti dagli Emirati per l'Italia? Molte compagnie fanno volare un gatto in cabina solo insieme a un passeggero. Il biglietto è tuo, al gatto e ai documenti pensiamo noi.",
+      r2_h:"Famiglia in Italia",r2_p:"Adotta, oppure ospita un gatto per qualche settimana mentre cerchiamo la sua casa definitiva.",
+      r3_h:"Volontario negli Emirati",r3_p:"Recuperi in strada, passaggi dal veterinario, stallo temporaneo: anche poche ore a settimana fanno la differenza.",
+      r4_h:"Veterinari e aziende",r4_p:"Cliniche, compagnie aeree, negozi per animali: sconti, cure o trasporti offerti ci permettono di salvare più gatti con gli stessi fondi.",
+      r5_h:"Voce sui social",r5_p:"Condividi le loro storie. Ogni condivisione porta la missione davanti a qualcuno che può aiutare.",
+      join_cta:"Scrivici su Instagram",copy:"Copia",copied:"Copiato",copylink:"Copia link",ig_post:"Post Instagram",
+      donate:"Dona su GoFundMe",donate_done:"Vedi la raccolta",donate_soon:"Raccolta in arrivo",raised:"{x} raccolti",goal:"obiettivo {x}",
+      footer:"Paws Without Borders · dagli Emirati Arabi Uniti all'Italia",
+      needs_e:"Cosa serve per un viaggio",needs_h:"Dalla strada all'aereo: ecco cosa paghiamo con le vostre donazioni",g1_h:"Cure veterinarie",g1_p:"Ogni gatto viene testato, vaccinato e sterilizzato prima di partire.",g2_h:"Documenti di viaggio",g2_p:"Senza microchip e antirabbia nessun gatto può entrare in Italia.",g3_h:"Il volo",g3_p:"Viaggiano in stiva, dentro gabbie omologate per il trasporto aereo.",g4_h:"L'attesa del volo",g4_p:"Spesso un gatto aspetta settimane prima di trovare un volo. Nel frattempo serve un posto sicuro e da mangiare.",i_fivfelv:"Test FIV/FeLV",i_parvo:"Vaccino contro la parvovirosi (panleucopenia)",i_steril:"Sterilizzazione",i_microchip:"Microchip",i_rabies:"Vaccino antirabbia",i_cert:"Certificato sanitario UE",i_flight:"Volo in stiva",i_crate:"Gabbia omologata IATA",i_foster:"Stallo temporaneo o pensione dal veterinario",i_food:"Cibo",per_week:"a settimana",total:"Totale per gatto",wait_extra:"+ {x} a settimana durante l'attesa del volo",
+      g0_h:"Test e controlli",g0_p:"Prima di tutto scopriamo come sta: alcuni virus e parassiti sono comuni nei gatti di strada.",g1_h:"Vaccini e cure",g1_p:"Ogni gatto viene vaccinato, sverminato e sterilizzato. Chi arriva ferito o malato riceve le cure di cui ha bisogno.",g2_p:"Microchip, antirabbia, certificato sanitario e pratiche di esportazione: senza, nessun gatto può partire.",i_fcov:"Test coronavirus felino (FCoV)",i_giardia:"Test Giardia",i_blood:"Analisi del sangue",i_parvo:"Vaccino trivalente (parvovirosi, calicivirus, rinotracheite)",i_deworm:"Sverminazione e antiparassitari",i_extra:"Cure aggiuntive (ferite, giardia, infezioni)",i_export:"Pratiche per l'esportazione",from_x:"da {x}",extra_note:"+ cure aggiuntive se necessarie, da {x}",
+      t_e:"Viaggi completati",t_h:"Sono arrivati a casa",t_p:"Ogni volo che atterra è merito di chi ha donato, condiviso o accompagnato un gatto. Ecco chi ce l'ha fatta.",t_empty_h:"Il primo viaggio è in preparazione",t_empty_p:"Qui pubblicheremo data, foto e storie dei gatti arrivati in Italia.",
+      r3_p:"Recuperi in strada, passaggi dal veterinario, trasporti in aeroporto: anche poche ore a settimana fanno la differenza.",r4_h:"Foster per lo stallo",r4_p:"Mentre aspettano il volo, i gatti hanno bisogno di una casa temporanea negli Emirati. Tu offri un posto sicuro per qualche settimana, noi ti aiutiamo con cibo e cure.",
+      donate_now:"Dona ora",fly_caption:"Ogni volo è un biglietto di sola andata verso casa.",stat_home:"Arrivati a casa",stat_active:"In attesa di volo",imp_e:"Il tuo aiuto, in concreto",imp_h:"Scegli una cifra e scopri cosa paghi",imp_with:"Con {x} paghi:",imp_cta:"Dona su una missione",imp_note:"Calcolato sui nostri costi reali.",imp_none:"Ogni euro conta: si somma alle donazioni degli altri per coprire la prossima spesa.",imp_full:"Con {x} copri l'intero viaggio di un gatto.",weeks:"Stallo e cibo per {n} sett.",
+      loc_label:"Dove ti trovi?",loc_all:"Tutti i ruoli",loc_ae:"Negli Emirati",loc_it:"In Italia",loc_any:"Ovunque",tm_r1:"Un volo",tm_r2:"Per sempre o qualche settimana",tm_r3:"Qualche ora a settimana",tm_r4:"Qualche settimana",tm_r5:"5 minuti",apply:"Mi candido",msg_intro:"Copia questo messaggio e mandacelo in direct su Instagram:",copy_msg:"Copia messaggio",open_ig:"Apri Instagram",msg_tpl:"Ciao Paws Without Borders! Ho visto il vostro sito e vorrei aiutarvi come: {role}.\nVi scrivo da: \nSono disponibile: ",
+      st:{raccolta:"Raccolta fondi",cure:"In cura",documenti:"Documenti in corso",volo:"Volo prenotato",casa:"Arrivato a casa"}},
+    en:{from:"Emirates",to:"Italy",hook:"Families leave. Their cats stay on the street.",
+      lead:"Too often, families leaving the country abandon their cats on the street, under a sun that tops 45 degrees in summer. We find them and, together with vets and fosters, we treat them and get them ready to fly to Italy, where a new family is waiting.",
+      lead2:"Every journey needs vet care, paperwork and a ticket. And every journey starts with one person who decides to help.",
+      cta_main:"Support a mission",cta_help:"Join us",
+      needs_e:"What one journey takes",needs_h:"Three things stand between a street cat and a home",
+      n1_h:"Vet care",n1_p:"Many arrive injured, dehydrated or sick. Check-ups, tests, neutering and treatment come first.",
+      n2_h:"Travel documents",n2_p:"Microchip, rabies vaccine and an EU health certificate. Without them, no cat can enter Italy.",
+      n3_h:"A seat on the plane",n3_p:"An approved carrier and a flight, in the cabin or the hold. It is the biggest cost of every mission.",
+      m_e:"Active missions",m_h:"These cats are waiting for their flight",m_p:"Each cat has its own GoFundMe. Give what you can, or share the link: often it's a friend of a friend who completes the goal.",
+      empty_h:"The first missions are coming soon",empty_p:"This is where you'll find the cats ready to fly, each with its own GoFundMe link. Follow us on Instagram so you don't miss them.",
+      h_e:"We're looking for you",h_h:"We need hands, not only donations",h_p:"We are a small team. Each role below saves one more cat. If you see yourself in one of them, write to us.",
+      r1_h:"Flight companion",r1_p:"Flying from the Emirates to Italy? Many airlines only let a cat travel in the cabin with a passenger. You keep your ticket, we take care of the cat and the paperwork.",
+      r2_h:"Family in Italy",r2_p:"Adopt, or foster a cat for a few weeks while we find its forever home.",
+      r3_h:"Volunteer in the Emirates",r3_p:"Street rescues, vet runs, temporary fostering: even a few hours a week make a difference.",
+      r4_h:"Vets and businesses",r4_p:"Clinics, airlines, pet shops: discounts, donated care or transport let us save more cats with the same funds.",
+      r5_h:"Voice on social media",r5_p:"Share their stories. Every share puts the mission in front of someone who can help.",
+      join_cta:"Message us on Instagram",copy:"Copy",copied:"Copied",copylink:"Copy link",ig_post:"Instagram post",
+      donate:"Donate on GoFundMe",donate_done:"See the fundraiser",donate_soon:"Fundraiser coming soon",raised:"{x} raised",goal:"goal {x}",
+      footer:"Paws Without Borders · from the United Arab Emirates to Italy",
+      needs_e:"What one journey takes",needs_h:"From the street to the plane: what your donations pay for",g1_h:"Vet care",g1_p:"Every cat is tested, vaccinated and neutered before leaving.",g2_h:"Travel documents",g2_p:"Without a microchip and a rabies vaccine, no cat can enter Italy.",g3_h:"The flight",g3_p:"They travel in the hold, inside crates approved for air transport.",g4_h:"Waiting for a flight",g4_p:"A cat often waits weeks before a flight is found. Meanwhile it needs a safe place and food.",i_fivfelv:"FIV/FeLV test",i_parvo:"Feline parvovirus (panleukopenia) vaccine",i_steril:"Spaying / neutering",i_microchip:"Microchip",i_rabies:"Rabies vaccine",i_cert:"EU health certificate",i_flight:"Flight in the hold",i_crate:"IATA-approved crate",i_foster:"Temporary foster or vet boarding",i_food:"Food",per_week:"per week",total:"Total per cat",wait_extra:"+ {x} per week while waiting for a flight",
+      g0_h:"Tests and check-ups",g0_p:"First we find out how they are: some viruses and parasites are common in street cats.",g1_h:"Vaccines and care",g1_p:"Every cat is vaccinated, dewormed and neutered. Those who arrive injured or sick get the care they need.",g2_p:"Microchip, rabies vaccine, health certificate and export paperwork: without them, no cat can leave.",i_fcov:"Feline coronavirus (FCoV) test",i_giardia:"Giardia test",i_blood:"Blood tests",i_parvo:"Core vaccine (parvovirus, calicivirus, rhinotracheitis)",i_deworm:"Deworming and flea/tick treatment",i_extra:"Extra treatment (wounds, giardia, infections)",i_export:"Export paperwork",from_x:"from {x}",extra_note:"+ extra treatment if needed, from {x}",
+      t_e:"Completed journeys",t_h:"They made it home",t_p:"Every flight that lands is thanks to someone who donated, shared or travelled with a cat. Here are the ones who made it.",t_empty_h:"The first journey is being prepared",t_empty_p:"Here we'll post the dates, photos and stories of the cats who reached Italy.",
+      r3_p:"Street rescues, vet runs, airport runs: even a few hours a week make a difference.",r4_h:"Foster carer",r4_p:"While they wait for their flight, cats need a temporary home in the Emirates. You offer a safe place for a few weeks, we help with food and vet care.",
+      donate_now:"Donate now",fly_caption:"Every flight is a one-way ticket home.",stat_home:"Made it home",stat_active:"Waiting to fly",imp_e:"Your help, in practice",imp_h:"Pick an amount and see what it pays for",imp_with:"{x} pays for:",imp_cta:"Donate to a mission",imp_note:"Based on our real costs.",imp_none:"Every euro counts: it adds up with other gifts to cover the next expense.",imp_full:"{x} covers a cat's entire journey.",weeks:"Foster and food for {n} wk",
+      loc_label:"Where are you?",loc_all:"All roles",loc_ae:"In the Emirates",loc_it:"In Italy",loc_any:"Anywhere",tm_r1:"One flight",tm_r2:"Forever or a few weeks",tm_r3:"A few hours a week",tm_r4:"A few weeks",tm_r5:"5 minutes",apply:"I want to help",msg_intro:"Copy this message and send it to us on Instagram:",copy_msg:"Copy message",open_ig:"Open Instagram",msg_tpl:"Hi Paws Without Borders! I saw your website and I'd like to help as: {role}.\nI'm writing from: \nI'm available: ",
+      st:{raccolta:"Fundraising",cure:"In treatment",documenti:"Paperwork in progress",volo:"Flight booked",casa:"Home at last"}},
+    fr:{from:"Émirats",to:"Italie",hook:"Les familles partent. Les chats restent dans la rue.",
+      lead:"Trop souvent, des familles qui quittent le pays abandonnent leurs chats dans la rue, sous un soleil qui dépasse les 45 degrés en été. Nous les trouvons et, avec des vétérinaires et des familles d'accueil, nous les soignons et les préparons au vol vers l'Italie, où une nouvelle famille les attend.",
+      lead2:"Chaque voyage demande des soins, des papiers et un billet. Et chaque voyage commence par une personne qui décide d'aider.",
+      cta_main:"Soutenir une mission",cta_help:"Rejoignez-nous",
+      needs_e:"Ce qu'il faut pour un voyage",needs_h:"Trois choses séparent un chat des rues d'un foyer",
+      n1_h:"Soins vétérinaires",n1_p:"Beaucoup arrivent blessés, déshydratés ou malades. Visites, analyses, stérilisation et traitements passent en premier.",
+      n2_h:"Documents de voyage",n2_p:"Puce électronique, vaccin antirabique et certificat sanitaire de l'UE. Sans eux, aucun chat ne peut entrer en Italie.",
+      n3_h:"Une place dans l'avion",n3_p:"Une caisse de transport homologuée et un vol, en cabine ou en soute. C'est la plus grosse dépense de chaque mission.",
+      m_e:"Missions en cours",m_h:"Ces chats attendent leur vol",m_p:"Chaque chat a sa propre cagnotte GoFundMe. Donnez ce que vous pouvez, ou partagez le lien : c'est souvent l'ami d'un ami qui permet d'atteindre l'objectif.",
+      empty_h:"Les premières missions arrivent bientôt",empty_p:"Vous trouverez ici les chats prêts à partir, chacun avec son lien GoFundMe. Suivez-nous sur Instagram pour ne pas les manquer.",
+      h_e:"C'est vous que nous cherchons",h_h:"Nous avons besoin de bras, pas seulement de dons",h_p:"Nous sommes une petite équipe. Chaque rôle ci-dessous sauve un chat de plus. Si vous vous reconnaissez dans l'un d'eux, écrivez-nous.",
+      r1_h:"Accompagnateur de vol",r1_p:"Vous voyagez des Émirats vers l'Italie ? Beaucoup de compagnies n'acceptent un chat en cabine qu'avec un passager. Le billet est à vous, nous nous occupons du chat et des papiers.",
+      r2_h:"Famille en Italie",r2_p:"Adoptez, ou accueillez un chat quelques semaines pendant que nous lui cherchons un foyer définitif.",
+      r3_h:"Bénévole aux Émirats",r3_p:"Sauvetages dans la rue, trajets chez le vétérinaire, accueil temporaire : même quelques heures par semaine comptent.",
+      r4_h:"Vétérinaires et entreprises",r4_p:"Cliniques, compagnies aériennes, animaleries : remises, soins ou transports offerts nous permettent de sauver plus de chats avec les mêmes fonds.",
+      r5_h:"Relais sur les réseaux",r5_p:"Partagez leurs histoires. Chaque partage montre la mission à quelqu'un qui peut aider.",
+      join_cta:"Écrivez-nous sur Instagram",copy:"Copier",copied:"Copié",copylink:"Copier le lien",ig_post:"Publication Instagram",
+      donate:"Donner sur GoFundMe",donate_done:"Voir la cagnotte",donate_soon:"Cagnotte bientôt en ligne",raised:"{x} collectés",goal:"objectif {x}",
+      footer:"Paws Without Borders · des Émirats arabes unis à l'Italie",
+      needs_e:"Ce qu'il faut pour un voyage",needs_h:"De la rue à l'avion : ce que financent vos dons",g1_h:"Soins vétérinaires",g1_p:"Chaque chat est testé, vacciné et stérilisé avant de partir.",g2_h:"Documents de voyage",g2_p:"Sans puce électronique ni vaccin antirabique, aucun chat ne peut entrer en Italie.",g3_h:"Le vol",g3_p:"Ils voyagent en soute, dans des caisses homologuées pour le transport aérien.",g4_h:"L'attente du vol",g4_p:"Un chat attend souvent des semaines avant de trouver un vol. En attendant, il lui faut un endroit sûr et de quoi manger.",i_fivfelv:"Test FIV/FeLV",i_parvo:"Vaccin contre le typhus (parvovirose féline)",i_steril:"Stérilisation",i_microchip:"Puce électronique",i_rabies:"Vaccin antirabique",i_cert:"Certificat sanitaire UE",i_flight:"Vol en soute",i_crate:"Caisse homologuée IATA",i_foster:"Famille d'accueil ou pension chez le vétérinaire",i_food:"Nourriture",per_week:"par semaine",total:"Total par chat",wait_extra:"+ {x} par semaine pendant l'attente du vol",
+      g0_h:"Tests et bilans",g0_p:"D'abord, on vérifie son état : certains virus et parasites sont fréquents chez les chats des rues.",g1_h:"Vaccins et soins",g1_p:"Chaque chat est vacciné, vermifugé et stérilisé. Ceux qui arrivent blessés ou malades reçoivent les soins nécessaires.",g2_p:"Puce, vaccin antirabique, certificat sanitaire et formalités d'exportation : sans eux, aucun chat ne peut partir.",i_fcov:"Test coronavirus félin (FCoV)",i_giardia:"Test Giardia",i_blood:"Analyses de sang",i_parvo:"Vaccin trivalent (typhus, calicivirose, coryza)",i_deworm:"Vermifuge et antiparasitaire",i_extra:"Soins supplémentaires (blessures, giardia, infections)",i_export:"Formalités d'exportation",from_x:"à partir de {x}",extra_note:"+ soins supplémentaires si nécessaire, à partir de {x}",
+      t_e:"Voyages réussis",t_h:"Ils sont arrivés chez eux",t_p:"Chaque vol qui atterrit, on le doit à quelqu'un qui a donné, partagé ou accompagné un chat. Voici ceux qui sont arrivés.",t_empty_h:"Le premier voyage se prépare",t_empty_p:"Nous publierons ici les dates, photos et histoires des chats arrivés en Italie.",
+      r3_p:"Sauvetages dans la rue, trajets chez le vétérinaire et à l'aéroport : même quelques heures par semaine comptent.",r4_h:"Famille d'accueil",r4_p:"En attendant leur vol, les chats ont besoin d'un foyer temporaire aux Émirats. Vous offrez un endroit sûr pendant quelques semaines, nous vous aidons pour la nourriture et les soins.",
+      donate_now:"Faire un don",fly_caption:"Chaque vol est un aller simple vers la maison.",stat_home:"Arrivés chez eux",stat_active:"En attente de vol",imp_e:"Votre aide, concrètement",imp_h:"Choisissez un montant et découvrez ce qu'il finance",imp_with:"Avec {x}, vous financez :",imp_cta:"Donner pour une mission",imp_note:"Calculé sur nos coûts réels.",imp_none:"Chaque euro compte : il s'ajoute aux autres dons pour couvrir la prochaine dépense.",imp_full:"Avec {x}, vous financez tout le voyage d'un chat.",weeks:"Accueil et nourriture pour {n} sem.",
+      loc_label:"Où êtes-vous ?",loc_all:"Tous les rôles",loc_ae:"Aux Émirats",loc_it:"En Italie",loc_any:"Partout",tm_r1:"Un vol",tm_r2:"Pour toujours ou quelques semaines",tm_r3:"Quelques heures par semaine",tm_r4:"Quelques semaines",tm_r5:"5 minutes",apply:"Je me propose",msg_intro:"Copiez ce message et envoyez-le-nous sur Instagram :",copy_msg:"Copier le message",open_ig:"Ouvrir Instagram",msg_tpl:"Bonjour Paws Without Borders ! J'ai vu votre site et j'aimerais vous aider comme : {role}.\nJ'écris depuis : \nJe suis disponible : ",
+      st:{raccolta:"Collecte en cours",cure:"En soins",documenti:"Documents en cours",volo:"Vol réservé",casa:"Enfin chez lui"}},
+    ru:{from:"Эмираты",to:"Италия",hook:"Семьи уезжают. Кошки остаются на улице.",
+      lead:"Слишком часто семьи, уезжая из страны, бросают своих кошек на улице, под солнцем, которое летом раскаляет воздух выше 45 градусов. Мы находим их и вместе с ветеринарами и передержками лечим и готовим к перелёту в Италию, где их ждёт новая семья.",
+      lead2:"Каждое путешествие требует лечения, документов и билета. И каждое начинается с человека, который решил помочь.",
+      cta_main:"Поддержать миссию",cta_help:"Присоединиться",
+      needs_e:"Что нужно для одного путешествия",needs_h:"Три вещи отделяют уличную кошку от дома",
+      n1_h:"Ветеринарная помощь",n1_p:"Многие попадают к нам ранеными, обезвоженными или больными. Сначала осмотр, анализы, стерилизация и лечение.",
+      n2_h:"Документы для поездки",n2_p:"Микрочип, прививка от бешенства и ветеринарный сертификат ЕС. Без них ни одна кошка не попадёт в Италию.",
+      n3_h:"Место в самолёте",n3_p:"Сертифицированная переноска и перелёт, в салоне или в багажном отсеке. Это самая большая статья расходов каждой миссии.",
+      m_e:"Активные миссии",m_h:"Эти кошки ждут своего рейса",m_p:"У каждой кошки свой сбор на GoFundMe. Пожертвуйте сколько можете или поделитесь ссылкой: часто цель закрывает друг друга.",
+      empty_h:"Первые миссии скоро появятся",empty_p:"Здесь будут кошки, готовые к вылету, у каждой своя ссылка на GoFundMe. Следите за нами в Instagram, чтобы ничего не пропустить.",
+      h_e:"Мы ищем вас",h_h:"Нужны руки, а не только пожертвования",h_p:"Мы небольшая команда. Каждая роль ниже спасает ещё одну кошку. Если узнаёте себя, напишите нам.",
+      r1_h:"Сопровождающий в полёте",r1_p:"Летите из Эмиратов в Италию? Многие авиакомпании пускают кошку в салон только вместе с пассажиром. Билет ваш, а о кошке и документах позаботимся мы.",
+      r2_h:"Семья в Италии",r2_p:"Возьмите кошку навсегда или приютите её на несколько недель, пока мы ищем ей постоянный дом.",
+      r3_h:"Волонтёр в Эмиратах",r3_p:"Спасение с улицы, поездки к ветеринару, временная передержка: даже несколько часов в неделю многое меняют.",
+      r4_h:"Ветеринары и компании",r4_p:"Клиники, авиакомпании, зоомагазины: скидки, бесплатное лечение или перевозка помогают спасти больше кошек на те же деньги.",
+      r5_h:"Голос в соцсетях",r5_p:"Делитесь их историями. Каждый репост показывает миссию тому, кто может помочь.",
+      join_cta:"Написать нам в Instagram",copy:"Копировать",copied:"Скопировано",copylink:"Копировать ссылку",ig_post:"Пост в Instagram",
+      donate:"Помочь на GoFundMe",donate_done:"Открыть сбор",donate_soon:"Сбор скоро откроется",raised:"собрано {x}",goal:"цель {x}",
+      footer:"Paws Without Borders · из ОАЭ в Италию",
+      needs_e:"Что нужно для одного путешествия",needs_h:"С улицы в самолёт: на что идут ваши пожертвования",g1_h:"Ветеринарная помощь",g1_p:"Перед отъездом каждую кошку тестируют, прививают и стерилизуют.",g2_h:"Документы для поездки",g2_p:"Без микрочипа и прививки от бешенства ни одна кошка не попадёт в Италию.",g3_h:"Перелёт",g3_p:"Кошки летят в багажном отсеке, в переносках, одобренных для авиаперевозок.",g4_h:"Ожидание рейса",g4_p:"Часто кошка неделями ждёт подходящий рейс. Всё это время ей нужны безопасное место и корм.",i_fivfelv:"Тест на FIV/FeLV",i_parvo:"Прививка от панлейкопении (парвовирус)",i_steril:"Стерилизация",i_microchip:"Микрочип",i_rabies:"Прививка от бешенства",i_cert:"Ветеринарный сертификат ЕС",i_flight:"Перелёт в багажном отсеке",i_crate:"Переноска по стандарту IATA",i_foster:"Передержка или пансион в ветклинике",i_food:"Корм",per_week:"в неделю",total:"Итого на одну кошку",wait_extra:"+ {x} в неделю на время ожидания рейса",
+      g0_h:"Анализы и обследования",g0_p:"Сначала узнаём, как кошка себя чувствует: некоторые вирусы и паразиты часто встречаются у уличных кошек.",g1_h:"Прививки и лечение",g1_p:"Каждую кошку прививают, избавляют от глистов и стерилизуют. Раненые и больные получают нужное лечение.",g2_p:"Микрочип, прививка от бешенства, ветеринарный сертификат и экспортные документы: без них ни одна кошка не сможет улететь.",i_fcov:"Тест на коронавирус кошек (FCoV)",i_giardia:"Тест на лямблии (Giardia)",i_blood:"Анализ крови",i_parvo:"Комплексная прививка (панлейкопения, калицивироз, ринотрахеит)",i_deworm:"Обработка от глистов и паразитов",i_extra:"Дополнительное лечение (раны, лямблиоз, инфекции)",i_export:"Оформление экспорта",from_x:"от {x}",extra_note:"+ дополнительное лечение при необходимости, от {x}",
+      t_e:"Завершённые путешествия",t_h:"Они уже дома",t_p:"Каждый удачный перелёт стал возможен благодаря тем, кто жертвовал, делился или сопровождал кошку. Вот те, кто уже добрался.",t_empty_h:"Первое путешествие уже готовится",t_empty_p:"Здесь появятся даты, фото и истории кошек, добравшихся до Италии.",
+      r3_p:"Спасение с улицы, поездки к ветеринару и в аэропорт: даже несколько часов в неделю многое меняют.",r4_h:"Передержка",r4_p:"Пока кошки ждут рейса, им нужен временный дом в Эмиратах. Вы даёте безопасное место на несколько недель, а мы помогаем с кормом и лечением.",
+      donate_now:"Помочь сейчас",fly_caption:"Каждый рейс становится билетом в один конец домой.",stat_home:"Уже дома",stat_active:"Ждут рейса",imp_e:"Ваша помощь на деле",imp_h:"Выберите сумму и узнайте, на что она пойдёт",imp_with:"{x} покроет:",imp_cta:"Пожертвовать на миссию",imp_note:"Рассчитано по нашим реальным расходам.",imp_none:"Каждый евро важен: вместе с другими пожертвованиями он покроет следующую трату.",imp_full:"{x} покроет всё путешествие одной кошки.",weeks:"Передержка и корм на {n} нед.",
+      loc_label:"Где вы находитесь?",loc_all:"Все роли",loc_ae:"В Эмиратах",loc_it:"В Италии",loc_any:"Где угодно",tm_r1:"Один рейс",tm_r2:"Навсегда или на несколько недель",tm_r3:"Несколько часов в неделю",tm_r4:"Несколько недель",tm_r5:"5 минут",apply:"Хочу помочь",msg_intro:"Скопируйте это сообщение и отправьте нам в Instagram:",copy_msg:"Копировать сообщение",open_ig:"Открыть Instagram",msg_tpl:"Здравствуйте, Paws Without Borders! Я посмотрел(а) ваш сайт и хочу помочь. Роль: {role}.\nЯ нахожусь в: \nКогда могу помогать: ",
+      st:{raccolta:"Идёт сбор",cure:"На лечении",documenti:"Оформляем документы",volo:"Рейс забронирован",casa:"Уже дома"}},
+    ar:{from:"الإمارات",to:"إيطاليا",hook:"العائلات ترحل، والقطط تبقى في الشارع.",
+      lead:"كثيرًا ما تتخلى عائلات عن قططها في الشارع عند مغادرة البلاد، تحت شمس تتجاوز حرارتها 45 درجة في الصيف. نحن نجدها، ومع أطباء بيطريين وعائلات مستضيفة نعالجها ونجهّزها للسفر إلى إيطاليا، حيث تنتظرها عائلة جديدة.",
+      lead2:"كل رحلة تحتاج إلى رعاية بيطرية ووثائق وتذكرة. وكل رحلة تبدأ بشخص يقرر أن يساعد.",
+      cta_main:"ادعم مهمة",cta_help:"انضم إلينا",
+      needs_e:"ما تحتاجه رحلة واحدة",needs_h:"ثلاثة أشياء تفصل قطة الشارع عن بيت",
+      n1_h:"الرعاية البيطرية",n1_p:"يصل كثير منها جريحًا أو يعاني من الجفاف أو المرض. الفحص والتحاليل والتعقيم والعلاج تأتي أولًا.",
+      n2_h:"وثائق السفر",n2_p:"شريحة إلكترونية ولقاح داء الكلب وشهادة صحية من الاتحاد الأوروبي. من دونها لا يمكن لأي قطة دخول إيطاليا.",
+      n3_h:"مقعد على الطائرة",n3_p:"قفص نقل معتمد ورحلة جوية، في المقصورة أو في عنبر الشحن. إنها أكبر تكلفة في كل مهمة.",
+      m_e:"المهام الحالية",m_h:"هذه القطط تنتظر رحلتها",m_p:"لكل قطة حملة تبرعات خاصة بها على GoFundMe. تبرّع بما تستطيع، أو شارك الرابط: كثيرًا ما يكون صديق صديق هو من يكمل الهدف.",
+      empty_h:"المهام الأولى قريبًا",empty_p:"هنا ستجد القطط الجاهزة للسفر، ولكل منها رابط GoFundMe. تابعنا على إنستغرام حتى لا يفوتك شيء.",
+      h_e:"نحن نبحث عنك",h_h:"نحتاج إلى أيادٍ، لا إلى التبرعات فقط",h_p:"نحن فريق صغير. كل دور أدناه ينقذ قطة أخرى. إذا وجدت نفسك في أحدها، راسلنا.",
+      r1_h:"مرافق رحلة",r1_p:"هل تسافر من الإمارات إلى إيطاليا؟ كثير من شركات الطيران لا تسمح بسفر القطة في المقصورة إلا مع مسافر. التذكرة لك، ونحن نهتم بالقطة والوثائق.",
+      r2_h:"عائلة في إيطاليا",r2_p:"تبنَّ قطة، أو استضفها بضعة أسابيع بينما نبحث لها عن بيت دائم.",
+      r3_h:"متطوع في الإمارات",r3_p:"إنقاذ من الشارع، مشاوير إلى الطبيب البيطري، استضافة مؤقتة: حتى ساعات قليلة في الأسبوع تصنع فرقًا.",
+      r4_h:"أطباء بيطريون وشركات",r4_p:"عيادات وشركات طيران ومتاجر حيوانات: الخصومات أو العلاج أو النقل المجاني تتيح لنا إنقاذ مزيد من القطط بالأموال نفسها.",
+      r5_h:"صوت على وسائل التواصل",r5_p:"شارك قصصها. كل مشاركة تضع المهمة أمام شخص قادر على المساعدة.",
+      join_cta:"راسلنا على إنستغرام",copy:"نسخ",copied:"تم النسخ",copylink:"نسخ الرابط",ig_post:"منشور إنستغرام",
+      donate:"تبرّع عبر GoFundMe",donate_done:"عرض الحملة",donate_soon:"الحملة قريبًا",raised:"تم جمع {x}",goal:"الهدف {x}",
+      footer:"Paws Without Borders · من الإمارات العربية المتحدة إلى إيطاليا",
+      needs_e:"ما تحتاجه رحلة واحدة",needs_h:"من الشارع إلى الطائرة: هذا ما تموّله تبرعاتكم",g1_h:"الرعاية البيطرية",g1_p:"تُفحص كل قطة وتُطعَّم وتُعقَّم قبل السفر.",g2_h:"وثائق السفر",g2_p:"من دون شريحة إلكترونية ولقاح داء الكلب لا يمكن لأي قطة دخول إيطاليا.",g3_h:"الرحلة",g3_p:"تسافر القطط في عنبر الشحن داخل أقفاص معتمدة للنقل الجوي.",g4_h:"انتظار الرحلة",g4_p:"كثيرًا ما تنتظر القطة أسابيع قبل أن نجد لها رحلة. وخلال ذلك تحتاج إلى مكان آمن وطعام.",i_fivfelv:"فحص FIV/FeLV",i_parvo:"لقاح فيروس بارفو القططي",i_steril:"التعقيم",i_microchip:"الشريحة الإلكترونية",i_rabies:"لقاح داء الكلب",i_cert:"الشهادة الصحية الأوروبية",i_flight:"الرحلة في عنبر الشحن",i_crate:"قفص معتمد من IATA",i_foster:"استضافة مؤقتة أو إقامة لدى الطبيب البيطري",i_food:"الطعام",per_week:"في الأسبوع",total:"المجموع لكل قطة",wait_extra:"+ {x} في الأسبوع خلال انتظار الرحلة",
+      g0_h:"الفحوصات والتحاليل",g0_p:"أولًا نتأكد من حالتها: بعض الفيروسات والطفيليات شائعة لدى قطط الشوارع.",g1_h:"اللقاحات والعلاج",g1_p:"تُطعَّم كل قطة وتُعالَج من الديدان وتُعقَّم. ومن يصل منها جريحًا أو مريضًا يتلقى العلاج الذي يحتاجه.",g2_p:"الشريحة الإلكترونية ولقاح داء الكلب والشهادة الصحية وإجراءات التصدير: من دونها لا يمكن لأي قطة السفر.",i_fcov:"فحص فيروس كورونا القططي (FCoV)",i_giardia:"فحص الجيارديا",i_blood:"تحاليل الدم",i_parvo:"اللقاح الثلاثي (بارفو، كاليسي، التهاب الأنف والرغامى)",i_deworm:"علاج الديدان والطفيليات الخارجية",i_extra:"علاج إضافي (جروح، جيارديا، التهابات)",i_export:"إجراءات التصدير",from_x:"من {x}",extra_note:"+ علاج إضافي عند الحاجة، من {x}",
+      t_e:"رحلات مكتملة",t_h:"وصلوا إلى بيوتهم",t_p:"كل رحلة تصل بفضل من تبرّع أو شارك أو رافق قطة. هؤلاء من وصلوا.",t_empty_h:"الرحلة الأولى قيد التحضير",t_empty_p:"سننشر هنا تواريخ الرحلات وصور وقصص القطط التي وصلت إلى إيطاليا.",
+      r3_p:"إنقاذ من الشارع، مشاوير إلى الطبيب البيطري وتوصيل إلى المطار: حتى ساعات قليلة في الأسبوع تصنع فرقًا.",r4_h:"استضافة مؤقتة",r4_p:"بينما تنتظر القطط رحلتها، تحتاج إلى بيت مؤقت في الإمارات. أنت تقدّم مكانًا آمنًا لبضعة أسابيع، ونحن نساعدك في الطعام والرعاية البيطرية.",
+      donate_now:"تبرّع الآن",fly_caption:"كل رحلة تذكرة ذهاب بلا عودة إلى البيت.",stat_home:"وصلوا إلى البيت",stat_active:"بانتظار الرحلة",imp_e:"مساعدتك على أرض الواقع",imp_h:"اختر مبلغًا واكتشف ما يغطيه",imp_with:"{x} تغطي:",imp_cta:"تبرّع لمهمة",imp_note:"محسوبة على أساس تكاليفنا الفعلية.",imp_none:"كل يورو مهم: يُضاف إلى تبرعات الآخرين لتغطية النفقة التالية.",imp_full:"{x} تغطي رحلة قطة كاملة.",weeks:"استضافة وطعام لمدة {n} أسبوع",
+      loc_label:"أين أنت؟",loc_all:"كل الأدوار",loc_ae:"في الإمارات",loc_it:"في إيطاليا",loc_any:"في أي مكان",tm_r1:"رحلة واحدة",tm_r2:"للأبد أو لبضعة أسابيع",tm_r3:"بضع ساعات أسبوعيًا",tm_r4:"بضعة أسابيع",tm_r5:"5 دقائق",apply:"أريد المساعدة",msg_intro:"انسخ هذه الرسالة وأرسلها إلينا على إنستغرام:",copy_msg:"نسخ الرسالة",open_ig:"افتح إنستغرام",msg_tpl:"مرحبًا Paws Without Borders! رأيت موقعكم وأود المساعدة في دور: {role}.\nأكتب لكم من: \nأوقات تفرغي: ",
+      st:{raccolta:"جمع التبرعات",cure:"قيد العلاج",documenti:"تجهيز الوثائق",volo:"تم حجز الرحلة",casa:"وصلت إلى البيت"}}
+  };
+  const GROUPS = [
+    {k:"g0", ico:'<circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/>', items:["fivfelv","fcov","giardia","blood"]},
+    {k:"g1", ico:'<path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/><path d="M12 9v5M9.5 11.5h5"/>', items:["parvo","deworm","steril","extra"]},
+    {k:"g2", ico:'<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/>', items:["microchip","rabies","cert","export"]},
+    {k:"g3", ico:'<path d="M2.5 16.5l19-7-2-3-7 2.5-5-4-2 1 3 5-4 1.5-2-1.5-1.5.8z"/><path d="M3 21h18"/>', items:["flight","crate"]},
+    {k:"g4", ico:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/>', items:["foster","food"]}
+  ];
+  const VARIABLE = ["extra"];
+  const ICONS = {"fivfelv": "<path d=\"M9 3h6M10 3v13a2 2 0 0 0 4 0V3\"/><path d=\"M10 11h4\"/>", "fcov": "<circle cx=\"12\" cy=\"12\" r=\"4.5\"/><path d=\"M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1\"/>", "giardia": "<circle cx=\"11\" cy=\"11\" r=\"6\"/><path d=\"M20 20l-4.5-4.5\"/>", "blood": "<path d=\"M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z\"/>", "parvo": "<path d=\"M17 3l4 4M14.5 5.5l4 4M16.5 7.5L8 16H5v-3l8.5-8.5M3 21l3-3M9.5 10.5l2 2\"/>", "deworm": "<rect x=\"3\" y=\"9\" width=\"18\" height=\"6\" rx=\"3\" transform=\"rotate(-45 12 12)\"/><path d=\"M9.5 9.5l5 5\"/>", "steril": "<path d=\"M6 3v6a5 5 0 0 0 10 0V3\"/><path d=\"M11 14v2a4 4 0 0 0 8 0v-1\"/><circle cx=\"19\" cy=\"13\" r=\"2\"/>", "extra": "<rect x=\"3\" y=\"8\" width=\"18\" height=\"8\" rx=\"4\" transform=\"rotate(-45 12 12)\"/><path d=\"M12 10v4M10 12h4\"/>", "microchip": "<rect x=\"7\" y=\"7\" width=\"10\" height=\"10\" rx=\"2\"/><path d=\"M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4\"/>", "rabies": "<path d=\"M17 3l4 4M14.5 5.5l4 4M16.5 7.5L8 16H5v-3l8.5-8.5M3 21l3-3M9.5 10.5l2 2\"/>", "cert": "<path d=\"M7 3h7l4 4v14H7z\"/><path d=\"M14 3v4h4M10 12h5M10 16h5\"/>", "export": "<path d=\"M9 3h6v5l-1.5 3h-3L9 8z\"/><path d=\"M5 14h14v4H5zM4 21h16\"/>", "flight": "<path d=\"M2.5 16.5l19-7-2-3-7 2.5-5-4-2 1 3 5-4 1.5-2-1.5-1.5.8z\"/>", "crate": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"12\" rx=\"2\"/><path d=\"M8 11v4M12 11v4M16 11v4M9 7V4.5h6V7\"/>", "foster": "<path d=\"M3 11l9-7 9 7\"/><path d=\"M5 10v10h14V10\"/><path d=\"M10 20v-5h4v5\"/>", "food": "<path d=\"M3 12h18a9 9 0 0 1-18 0z\"/><path d=\"M9 8.5c0-2 2-2 2-4.5M14 8.5c0-2 2-2 2-4.5\"/>"};
+  const WEEKLY = ["foster","food"];
+  const LOCALE = {it:"it-IT",en:"en-GB",fr:"fr-FR",ru:"ru-RU",ar:"ar-AE"};
+  const LANGS = Object.keys(T);
+
+  let state = {missions:[], trips:[], costs:{}, site:{}};
+
+  let lang = "it", canEdit = false, pendingDelete = null;
+  const $ = id => document.getElementById(id);
+  const t = k => (T[lang][k] ?? T.it[k]);
+  const eur = n => "€ " + Math.round(Number(n)||0).toLocaleString(LOCALE[lang]);
+  const safeUrl = u => /^https:\/\//i.test(u||"") ? u : "";
+  function el(tag, cls, text){ const e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+
+  function pickLang(){
+    const h = (location.hash||"").slice(1).toLowerCase();
+    if(LANGS.includes(h)) return h;
+    try{ const s = localStorage.getItem("pwb-lang"); if(LANGS.includes(s)) return s; }catch(e){}
+    const n = (navigator.language||"it").slice(0,2).toLowerCase();
+    return LANGS.includes(n) ? n : "it";
+  }
+  function setLang(l){
+    lang = l;
+    const root = document.documentElement;
+    root.lang = l; root.dir = l==="ar" ? "rtl" : "ltr";
+    document.querySelectorAll("[data-t]").forEach(n => { n.textContent = t(n.dataset.t); });
+    document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang===l)));
+    try{ localStorage.setItem("pwb-lang", l); }catch(e){}
+    render();
+  }
+  document.querySelectorAll(".langs button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+  function renderCosts(){
+    const box = $("needs"); box.replaceChildren();
+    const num = k => { const v = Number(state.costs[k]); return v>0 ? v : 0; };
+    GROUPS.forEach(g => {
+      const card = el("article","need");
+      const ico = el("div","ico"); ico.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">'+g.ico+'</svg>';
+      card.append(ico, el("h3",null,t(g.k+"_h")), el("p",null,t(g.k+"_p")));
+      const ul = el("ul","items");
+      g.items.forEach(k => {
+        const li = el("li"); const lbl = el("span","lbl");
+        const ic = el("span","iico"); ic.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">'+(ICONS[k]||"")+'</svg>';
+        lbl.append(ic, el("span",null,t("i_"+k))); li.append(lbl);
+        const v = num(k);
+        if(v){ const a = el("span","amt",VARIABLE.includes(k) ? t("from_x").replace("{x}",eur(v)) : eur(v)); if(WEEKLY.includes(k)){ a.append(" ", el("span","per",t("per_week"))); } li.append(a); }
+        ul.append(li);
+      });
+      card.append(ul); box.append(card);
+    });
+    const once = Object.keys(state.costs).filter(k=>!WEEKLY.includes(k) && !VARIABLE.includes(k)).reduce((s,k)=>s+num(k),0);
+    const extra = VARIABLE.reduce((s,k)=>s+num(k),0);
+    const weekly = WEEKLY.reduce((s,k)=>s+num(k),0);
+    const tot = $("total"); tot.replaceChildren(); tot.hidden = !(once>0);
+    if(once>0){
+      const left = el("div"); left.append(el("span",null,t("total")));
+      if(weekly>0) left.append(el("small",null,t("wait_extra").replace("{x}",eur(weekly))));
+      if(extra>0) left.append(el("small",null,t("extra_note").replace("{x}",eur(extra))));
+      tot.append(left, el("b",null,eur(once)));
+    }
+  }
+
+  function fmtDate(d){
+    const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(d||""); if(!m) return d||"";
+    try{ return new Date(+m[1], +m[2]-1, +m[3]).toLocaleDateString(LOCALE[lang], {day:"numeric", month:"long", year:"numeric"}); }catch(e){ return d; }
+  }
+  let pendingTripDelete = null;
+  function renderTrips(){
+    const box = $("trips"); box.replaceChildren();
+    const trips = state.trips.slice().sort((a,b)=>(b.date||"").localeCompare(a.date||""));
+    $("tripsEmpty").hidden = trips.length > 0;
+    const arrow = lang==="ar" ? " ← " : " → ";
+    trips.forEach(tr => {
+      const card = el("article","trip");
+      const photos = [].concat(tr.photos||[]).filter(u => typeof u==="string" && /^(\/|https:\/\/|data:image\/)/.test(u)).slice(0,4);
+      if(photos.length){
+        const g = el("div","trip-photos");
+        g.style.gridTemplateColumns = photos.length===2 ? "1fr 1fr" : "repeat(" + Math.max(1, photos.length-1) + ",1fr)"; if(photos.length===2) g.classList.add("pair");
+        photos.forEach((u,i) => { const im = el("img"); im.src = u; im.loading = "lazy"; im.alt = (tr.cats||"") + (i ? "" : " · " + fmtDate(tr.date)); g.append(im); });
+        card.append(g);
+      } else {
+        const ph = el("div","trip-noimg"); ph.innerHTML = '<svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="21" rx="6.5" ry="5.5"/><circle cx="8.5" cy="13" r="2.8"/><circle cx="13" cy="8.5" r="2.8"/><circle cx="19" cy="8.5" r="2.8"/><circle cx="23.5" cy="13" r="2.8"/></svg>'; card.append(ph);
+      }
+      const b = el("div","trip-body");
+      b.append(el("span","date",fmtDate(tr.date)));
+      b.append(el("h3",null,(tr.from||t("from")) + arrow + (tr.to||t("to"))));
+      if(tr.cats) b.append(el("p","trip-cats",tr.cats));
+      const note = lang==="it" ? (tr.note||tr.note_en) : (tr.note_en||tr.note);
+      if(note){ const p = el("p","m-desc",note); if(lang!=="it" && !tr.note_en) p.lang="it"; b.append(p); }
+      if(canEdit){
+        const ed = el("div","m-actions"); ed.lang="it";
+        const eb = el("button","btn btn-line btn-sm","Modifica"); eb.type="button"; eb.addEventListener("click",()=>fillTrip(tr)); ed.append(eb);
+        if(pendingTripDelete===tr.id){
+          const c = el("span","confirm","Eliminare questo viaggio?");
+          const yes = el("button","btn btn-ink btn-sm","Sì, elimina"); yes.type="button";
+          const no = el("button","btn btn-line btn-sm","No"); no.type="button";
+          yes.addEventListener("click",()=>{ state.trips = state.trips.filter(x=>x.id!==tr.id); pendingTripDelete=null; save("Viaggio eliminato", $("tripMsg")); });
+          no.addEventListener("click",()=>{ pendingTripDelete=null; render(); });
+          c.append(yes,no); ed.append(c);
+        } else {
+          const db = el("button","btn btn-line btn-sm","Elimina"); db.type="button"; db.addEventListener("click",()=>{ pendingTripDelete=tr.id; render(); }); ed.append(db);
+        }
+        b.append(ed);
+      }
+      card.append(b); box.append(card);
+    });
+  }
+
+
+  const AMOUNTS = [10,25,50,100,250];
+  let amount = 50;
+  function iconSpan(k){ const ic = el("span","iico"); ic.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">'+(ICONS[k]||"")+'</svg>'; return ic; }
+  function renderImpact(){
+    const num = k => { const v = Number(state.costs[k]); return v>0 ? v : 0; };
+    const once = GROUPS.flatMap(g=>g.items).filter(k=>!WEEKLY.includes(k) && !VARIABLE.includes(k) && num(k)>0);
+    const total = once.reduce((s,k)=>s+num(k),0);
+    $("impact").hidden = once.length === 0;
+    if(!once.length) return;
+    const chips = $("chips"); chips.replaceChildren();
+    AMOUNTS.forEach(a => { const b = el("button","chip",eur(a)); b.type="button"; b.setAttribute("aria-pressed", String(a===amount)); b.addEventListener("click",()=>{ amount=a; renderImpact(); }); chips.append(b); });
+    const out = $("impactOut"); out.replaceChildren();
+    if(amount >= total){ out.append(el("p","with",t("imp_full").replace("{x}",eur(amount)))); }
+    else out.append(el("p","with",t("imp_with").replace("{x}",eur(amount))));
+    let left = amount; const picked = [];
+    once.slice().sort((a,b)=>num(a)-num(b)).forEach(k => { if(num(k) <= left){ picked.push(k); left -= num(k); } });
+    const ul = el("ul","impact-list");
+    picked.forEach(k => { const li = el("li"); li.append(iconSpan(k), el("span",null,t("i_"+k))); ul.append(li); });
+    const wk = WEEKLY.reduce((s,k)=>s+num(k),0);
+    if(wk>0 && left>=wk){ const n = Math.min(12, Math.floor(left/wk)); const li = el("li"); li.append(iconSpan("foster"), el("span",null,t("weeks").replace("{n}",n))); ul.append(li); }
+    if(ul.children.length) out.append(ul); else out.firstChild.textContent = t("imp_none");
+  }
+  function renderStats(){
+    const box = $("stats"); box.replaceChildren();
+    const home = state.trips.reduce((s,tr)=>s+(tr.cats||"").split(",").map(x=>x.trim()).filter(Boolean).length,0);
+    const active = state.missions.filter(m=>m.status!=="casa").length;
+    [[home,"stat_home"],[active,"stat_active"]].forEach(([n,k]) => { if(n>0){ const c = el("span","stat"); c.append(el("b",null,String(n)), el("span",null,t(k))); box.append(c); } });
+  }
+  (function setupMotion(){
+    const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(reduce){
+      document.querySelectorAll("#flightSvg animate, #flightSvg animateMotion").forEach(n=>n.remove());
+      const tr = document.querySelector("#flightSvg .trail"); if(tr) tr.setAttribute("stroke-dashoffset","0");
+      const pl = document.getElementById("plane"); if(pl) pl.setAttribute("transform","translate(500 66) rotate(180)");
+    }
+    const fab = $("fab"), hero = document.querySelector(".hero"), miss = $("missioni");
+    if(!("IntersectionObserver" in window)) return;
+    let heroIn = true, missIn = false;
+    const upd = () => fab.classList.toggle("show", !heroIn && !missIn);
+    new IntersectionObserver(es => { es.forEach(e => { if(e.target===hero) heroIn = e.isIntersecting; else missIn = e.isIntersecting; }); upd(); }).observe(hero);
+    new IntersectionObserver(es => { es.forEach(e => { missIn = e.isIntersecting; }); upd(); }, {threshold:0.15}).observe(miss);
+  })();
+
+  let roleFilter = "all";
+  function applyRoleFilter(){
+    document.querySelectorAll("#roles .role").forEach(c => { const l = c.dataset.loc; c.hidden = !(roleFilter==="all" || l===roleFilter || l==="any"); });
+    document.querySelectorAll(".fchip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f===roleFilter)));
+  }
+  document.querySelectorAll(".fchip").forEach(b => b.addEventListener("click", () => { roleFilter = b.dataset.f; applyRoleFilter(); }));
+  function fillRoleMsgs(){
+    document.querySelectorAll("#roles .role").forEach(c => { c.querySelector(".apply-msg").value = t("msg_tpl").replace("{role}", t(c.dataset.role+"_h")); });
+  }
+  document.querySelectorAll("#roles .role").forEach(c => {
+    const btn = c.querySelector(".apply"), panel = c.querySelector(".apply-panel"), ta = c.querySelector(".apply-msg"), note = c.querySelector(".apply-panel .msg");
+    btn.addEventListener("click", () => {
+      const open = panel.hidden;
+      document.querySelectorAll("#roles .apply-panel").forEach(p => { p.hidden = true; p.closest(".role").querySelector(".apply").setAttribute("aria-expanded","false"); });
+      if(open){ panel.hidden = false; btn.setAttribute("aria-expanded","true"); ta.focus({preventScroll:true}); ta.setSelectionRange(ta.value.length, ta.value.length); }
+    });
+    ta.removeAttribute("readonly");
+    c.querySelector(".copy-msg").addEventListener("click", () => {
+      const done = () => { note.textContent = t("copied"); setTimeout(()=>note.textContent="",2000); };
+      try{ navigator.clipboard.writeText(ta.value).then(done).catch(()=>{ ta.select(); }); }catch(e){ ta.select(); }
+    });
+  });
+
+  function render(){
+    renderCosts();
+    fillRoleMsgs();
+    renderImpact();
+    renderStats();
+    renderTrips();
+    const list = $("list"); list.replaceChildren();
+    const ms = state.missions;
+    $("empty").hidden = ms.length > 0;
+    const arrow = lang==="ar" ? " ← " : " → ";
+    ms.forEach(m => {
+      const card = el("article","mission");
+      const top = el("div","m-top");
+      const av = el("div","avatar",(m.name||"?").trim().charAt(0).toUpperCase());
+      if(m.photo && /^(\/|https:\/\/)/.test(m.photo)){ av.textContent=""; const im = el("img"); im.src = m.photo; im.alt = m.name||""; im.loading="lazy"; av.append(im); }
+      top.append(av);
+      const tx = el("div"); tx.style.minWidth="0";
+      tx.append(el("h3",null,m.name||"—"));
+      tx.append(el("div","m-route",(m.from||t("from")) + arrow + (m.to||t("to"))));
+      top.append(tx); card.append(top);
+      const st = el("span","status",(T[lang].st[m.status]||T[lang].st.raccolta)); st.dataset.s = m.status||"raccolta"; card.append(st);
+      const desc = lang==="it" ? (m.desc||m.desc_en) : (m.desc_en||m.desc);
+      if(desc){ const p = el("p","m-desc",desc); if(lang!=="it" && !m.desc_en) p.lang="it"; card.append(p); }
+      const goal = Number(m.goal)||0, raised = Number(m.raised)||0;
+      if(goal>0){
+        const meter = el("div","meter"); const bar = el("div","bar"); const fill = el("i");
+        fill.style.width = Math.min(100, raised/goal*100) + "%"; bar.append(fill);
+        bar.setAttribute("role","img"); bar.setAttribute("aria-label", t("raised").replace("{x}",eur(raised)) + " / " + t("goal").replace("{x}",eur(goal)));
+        const row = el("div","meter-row"); row.append(el("span",null,t("raised").replace("{x}",eur(raised))), el("span",null,t("goal").replace("{x}",eur(goal))));
+        meter.append(bar,row); card.append(meter);
+      }
+      const acts = el("div","m-actions");
+      const link = safeUrl(m.link);
+      const donate = el("a","btn btn-gold btn-sm", m.status==="casa" ? t("donate_done") : t("donate"));
+      if(link){ donate.href=link; donate.target="_blank"; donate.rel="noopener"; }
+      else { donate.setAttribute("aria-disabled","true"); donate.textContent=t("donate_soon"); }
+      acts.append(donate);
+      if(link){
+        const share = el("button","btn btn-line btn-sm",t("copylink")); share.type="button";
+        const note = el("span","msg");
+        share.addEventListener("click",()=>copyText(link,note));
+        acts.append(share, note);
+      }
+      const ig = safeUrl(m.ig);
+      if(ig){ const a = el("a","btn btn-line btn-sm",t("ig_post")); a.href=ig; a.target="_blank"; a.rel="noopener"; acts.append(a); }
+      card.append(acts);
+
+      if(canEdit){
+        const ed = el("div","m-actions"); ed.lang="it";
+        const eb = el("button","btn btn-line btn-sm","Modifica"); eb.type="button";
+        eb.addEventListener("click",()=>fillForm(m));
+        ed.append(eb);
+        if(pendingDelete===m.id){
+          const c = el("span","confirm","Eliminare questa missione?");
+          const yes = el("button","btn btn-ink btn-sm","Sì, elimina"); yes.type="button";
+          const no = el("button","btn btn-line btn-sm","No"); no.type="button";
+          yes.addEventListener("click",()=>{ state.missions = state.missions.filter(x=>x.id!==m.id); pendingDelete=null; save("Missione eliminata"); });
+          no.addEventListener("click",()=>{ pendingDelete=null; render(); });
+          c.append(yes,no); ed.append(c);
+        } else {
+          const db = el("button","btn btn-line btn-sm","Elimina"); db.type="button";
+          db.addEventListener("click",()=>{ pendingDelete=m.id; render(); });
+          ed.append(db);
+        }
+        card.append(ed);
+      }
+      list.append(card);
+    });
+  }
+
+  function copyText(text, note){
+    const ok = () => { note.textContent=t("copied"); setTimeout(()=>note.textContent="",2000); };
+    try{ navigator.clipboard.writeText(text).then(ok).catch(()=>{ note.textContent=text; }); }
+    catch(e){ note.textContent=text; }
+  }
+  $("copyHandle").addEventListener("click",()=>copyText($("handle").textContent,$("handleMsg")));
+
+  setLang(pickLang());
+  fetch("/data.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => {
+    if(!d) return;
+    state.missions = Array.isArray(d.missions) ? d.missions : [];
+    state.trips = Array.isArray(d.trips) ? d.trips : [];
+    state.costs = d.costs && typeof d.costs==="object" ? d.costs : {};
+    state.site = d.site || {};
+    const order = {raccolta:0,cure:1,documenti:2,volo:3,casa:4};
+    state.missions.sort((a,b)=>(Number(a.order)||99)-(Number(b.order)||99) || (order[a.status]??0)-(order[b.status]??0) || String(a.name).localeCompare(String(b.name)));
+    const h = String(state.site.instagram||"").replace(/^@/,"").trim();
+    if(/^[A-Za-z0-9._]{1,30}$/.test(h)){
+      $("handle").textContent = "@"+h;
+      document.querySelectorAll('a[href="https://www.instagram.com/"]').forEach(a => a.href = "https://instagram.com/"+h);
+    }
+    render();
+  }).catch(()=>{});
+})();
+</script>
+
+</body>
+</html>

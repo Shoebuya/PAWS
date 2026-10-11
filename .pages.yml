@@ -1,0 +1,138 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: missioni
+    label: Gatti in attesa (missioni GoFundMe)
+    type: collection
+    path: content/missioni
+    format: json
+    filename: "{year}-{month}-{day}-{primary}.json"
+    view:
+      fields: [name, status, raised, goal]
+      primary: name
+    fields:
+      - name: name
+        label: Nome del gatto o della missione
+        type: string
+        required: true
+      - name: status
+        label: Stato
+        type: select
+        default: raccolta
+        options:
+          values:
+            - { name: raccolta, label: Raccolta fondi }
+            - { name: cure, label: In cura }
+            - { name: documenti, label: Documenti in corso }
+            - { name: volo, label: Volo prenotato }
+            - { name: casa, label: Arrivato a casa }
+      - name: photo
+        label: Foto
+        type: image
+      - name: from
+        label: Da (Emirati)
+        type: string
+      - name: to
+        label: Verso (Italia)
+        type: string
+      - name: desc
+        label: Storia breve in italiano
+        type: text
+      - name: desc_en
+        label: Storia breve in inglese (facoltativa, per chi legge in altre lingue)
+        type: text
+      - name: link
+        label: Link GoFundMe (https://gofund.me/...)
+        type: string
+      - name: goal
+        label: Obiettivo (€)
+        type: number
+      - name: raised
+        label: Raccolti finora (€)
+        type: number
+      - name: ig
+        label: Link al post Instagram (facoltativo)
+        type: string
+      - name: order
+        label: Posizione in pagina (1 = primo, facoltativo)
+        type: number
+      - name: visibile
+        label: Mostra sul sito
+        type: boolean
+        default: true
+
+  - name: viaggi
+    label: Viaggi completati (gatti adottati)
+    type: collection
+    path: content/viaggi
+    format: json
+    filename: "{year}-{month}-{day}-{primary}.json"
+    view:
+      fields: [cats, date, to]
+      primary: cats
+    fields:
+      - name: cats
+        label: Gatti adottati (nomi separati da virgola)
+        type: string
+        required: true
+      - name: date
+        label: Data del volo
+        type: date
+        required: true
+      - name: from
+        label: Da
+        type: string
+      - name: to
+        label: A
+        type: string
+      - name: note
+        label: Racconto breve in italiano
+        type: text
+      - name: note_en
+        label: Racconto breve in inglese (facoltativo)
+        type: text
+      - name: photos
+        label: Foto (fino a 4)
+        type: image
+        options:
+          multiple:
+            max: 4
+      - name: visibile
+        label: Mostra sul sito
+        type: boolean
+        default: true
+
+  - name: costi
+    label: Prezzi delle spese
+    type: file
+    path: content/costi.json
+    format: json
+    fields:
+      - { name: fivfelv, label: Test FIV/FeLV (€), type: number }
+      - { name: fcov, label: Test coronavirus felino (€), type: number }
+      - { name: giardia, label: Test Giardia (€), type: number }
+      - { name: blood, label: Analisi del sangue (€), type: number }
+      - { name: parvo, label: Vaccino trivalente (€), type: number }
+      - { name: deworm, label: Sverminazione e antiparassitari (€), type: number }
+      - { name: steril, label: Sterilizzazione (€), type: number }
+      - { name: extra, label: Cure aggiuntive, a partire da (€), type: number }
+      - { name: microchip, label: Microchip (€), type: number }
+      - { name: rabies, label: Vaccino antirabbia (€), type: number }
+      - { name: cert, label: Certificato sanitario UE (€), type: number }
+      - { name: export, label: Pratiche per l'esportazione (€), type: number }
+      - { name: flight, label: Volo in stiva (€), type: number }
+      - { name: crate, label: Gabbia omologata IATA (€), type: number }
+      - { name: foster, label: Stallo o pensione dal veterinario (€ a settimana), type: number }
+      - { name: food, label: Cibo (€ a settimana), type: number }
+
+  - name: sito
+    label: Impostazioni del sito
+    type: file
+    path: content/sito.json
+    format: json
+    fields:
+      - name: instagram
+        label: Nome account Instagram (senza @)
+        type: string
