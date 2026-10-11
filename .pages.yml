@@ -29,8 +29,11 @@ content:
             - { name: volo, label: Volo prenotato }
             - { name: casa, label: Arrivato a casa }
       - name: photo
-        label: Foto
+        label: Foto (JPG, PNG o WebP)
         type: image
+        options:
+          rename: safe
+          extensions: [jpg, jpeg, png, webp]
       - name: from
         label: Da (Emirati)
         type: string
@@ -55,6 +58,8 @@ content:
         options:
           multiple:
             max: 8
+          rename: safe
+          extensions: [jpg, jpeg, png, webp]
       - name: link
         label: Link GoFundMe (https://gofund.me/...)
         type: string
@@ -117,6 +122,8 @@ content:
         options:
           multiple:
             max: 12
+          rename: safe
+          extensions: [jpg, jpeg, png, webp]
       - name: visibile
         label: Mostra sul sito
         type: boolean
