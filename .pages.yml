@@ -37,12 +37,24 @@ content:
       - name: to
         label: Verso (Italia)
         type: string
+      - name: date
+        label: Data del volo (facoltativa)
+        type: date
+      - name: cats
+        label: Numero di gatti (facoltativo)
+        type: number
       - name: desc
-        label: Storia breve in italiano
+        label: Storia completa in italiano (sul sito compare un'anteprima, il testo intero si apre nella pagina della missione)
         type: text
       - name: desc_en
-        label: Storia breve in inglese (facoltativa, per chi legge in altre lingue)
+        label: Storia in inglese (facoltativa, per chi legge in altre lingue)
         type: text
+      - name: gallery
+        label: Altre foto per la pagina della storia (facoltative, fino a 8)
+        type: image
+        options:
+          multiple:
+            max: 8
       - name: link
         label: Link GoFundMe (https://gofund.me/...)
         type: string

@@ -1,5 +1,16 @@
 {
   "buildCommand": "node build.mjs",
   "outputDirectory": "dist",
-  "framework": null
+  "framework": null,
+  "images": {
+    "sizes": [
+      640,
+      1280,
+      1920
+    ],
+    "formats": [
+      "image/webp"
+    ],
+    "minimumCacheTTL": 2592000
+  }
 }
