@@ -86,6 +86,10 @@ a{color:inherit}
 .iico{width:30px;height:30px;flex:none;border-radius:9px;background:var(--gold-soft);display:grid;place-items:center}
 .iico svg{width:17px;height:17px;stroke:var(--ginger);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .items .amt{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.items .amt{display:grid;justify-items:end;text-align:end}
+.items .conv{font-weight:500;color:var(--muted);font-size:.8rem}
+.tot-amt{display:grid;justify-items:end;text-align:end}
+.rate-note{font-size:.82rem;margin-top:8px}
 .items .per{font-weight:500;color:var(--muted);font-size:.85rem}
 .total{margin-top:18px;background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap}
 .total b{font:800 1.5rem var(--display);font-stretch:112%;font-variant-numeric:tabular-nums}
@@ -305,6 +309,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     </div>
     <div class="needs" id="needs"></div>
     <div class="total" id="total" hidden></div>
+    <p class="rate-note muted" id="rateNote" hidden></p>
   </section>
 
   <section class="impact" id="impact" hidden aria-labelledby="impact-t">
@@ -472,6 +477,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       r3_p:"Recuperi in strada, passaggi dal veterinario, trasporti in aeroporto: anche poche ore a settimana fanno la differenza.",r4_h:"Foster per lo stallo",r4_p:"Mentre aspettano il volo, i gatti hanno bisogno di una casa temporanea negli Emirati. Tu offri un posto sicuro per qualche settimana, noi ti aiutiamo con cibo e cure.",
       donate_now:"Dona ora",fly_caption:"Ogni volo è un biglietto di sola andata verso casa.",stat_home:"Arrivati a casa",stat_active:"In attesa di volo",imp_e:"Il tuo aiuto, in concreto",imp_h:"Scegli una cifra e scopri cosa paghi",imp_with:"Con {x} paghi:",imp_cta:"Dona su una missione",imp_note:"Calcolato sui nostri costi reali.",imp_none:"Ogni euro conta: si somma alle donazioni degli altri per coprire la prossima spesa.",imp_full:"Con {x} copri l'intero viaggio di un gatto.",weeks:"Stallo e cibo per {n} sett.",
       loc_label:"Dove ti trovi?",loc_all:"Tutti i ruoli",loc_ae:"Negli Emirati",loc_it:"In Italia",loc_any:"Ovunque",tm_r1:"Un volo",tm_r2:"Per sempre o qualche settimana",tm_r3:"Qualche ora a settimana",tm_r4:"Qualche settimana",tm_r5:"5 minuti",apply:"Mi candido",msg_intro:"Copia questo messaggio e mandacelo in direct su Instagram:",copy_msg:"Copia messaggio",open_ig:"Apri Instagram",msg_tpl:"Ciao Paws Without Borders! Ho visto il vostro sito e vorrei aiutarvi come: {role}.\nVi scrivo da: \nSono disponibile: ",
+      rate_note:"Prezzi in dirham degli Emirati (AED). Conversione indicativa: 1 AED = € {r}.",
       st:{raccolta:"Raccolta fondi",cure:"In cura",documenti:"Documenti in corso",volo:"Volo prenotato",casa:"Arrivato a casa"}},
     en:{from:"Emirates",to:"Italy",hook:"Families leave. Their cats stay on the street.",
       lead:"Too often, families leaving the country abandon their cats on the street, under a sun that tops 45 degrees in summer. We find them and, together with vets and fosters, we treat them and get them ready to fly to Italy, where a new family is waiting.",
@@ -498,6 +504,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       r3_p:"Street rescues, vet runs, airport runs: even a few hours a week make a difference.",r4_h:"Foster carer",r4_p:"While they wait for their flight, cats need a temporary home in the Emirates. You offer a safe place for a few weeks, we help with food and vet care.",
       donate_now:"Donate now",fly_caption:"Every flight is a one-way ticket home.",stat_home:"Made it home",stat_active:"Waiting to fly",imp_e:"Your help, in practice",imp_h:"Pick an amount and see what it pays for",imp_with:"{x} pays for:",imp_cta:"Donate to a mission",imp_note:"Based on our real costs.",imp_none:"Every euro counts: it adds up with other gifts to cover the next expense.",imp_full:"{x} covers a cat's entire journey.",weeks:"Foster and food for {n} wk",
       loc_label:"Where are you?",loc_all:"All roles",loc_ae:"In the Emirates",loc_it:"In Italy",loc_any:"Anywhere",tm_r1:"One flight",tm_r2:"Forever or a few weeks",tm_r3:"A few hours a week",tm_r4:"A few weeks",tm_r5:"5 minutes",apply:"I want to help",msg_intro:"Copy this message and send it to us on Instagram:",copy_msg:"Copy message",open_ig:"Open Instagram",msg_tpl:"Hi Paws Without Borders! I saw your website and I'd like to help as: {role}.\nI'm writing from: \nI'm available: ",
+      rate_note:"Prices in UAE dirham (AED). Approximate conversion: 1 AED = € {r}.",
       st:{raccolta:"Fundraising",cure:"In treatment",documenti:"Paperwork in progress",volo:"Flight booked",casa:"Home at last"}},
     fr:{from:"Émirats",to:"Italie",hook:"Les familles partent. Les chats restent dans la rue.",
       lead:"Trop souvent, des familles qui quittent le pays abandonnent leurs chats dans la rue, sous un soleil qui dépasse les 45 degrés en été. Nous les trouvons et, avec des vétérinaires et des familles d'accueil, nous les soignons et les préparons au vol vers l'Italie, où une nouvelle famille les attend.",
@@ -524,6 +531,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       r3_p:"Sauvetages dans la rue, trajets chez le vétérinaire et à l'aéroport : même quelques heures par semaine comptent.",r4_h:"Famille d'accueil",r4_p:"En attendant leur vol, les chats ont besoin d'un foyer temporaire aux Émirats. Vous offrez un endroit sûr pendant quelques semaines, nous vous aidons pour la nourriture et les soins.",
       donate_now:"Faire un don",fly_caption:"Chaque vol est un aller simple vers la maison.",stat_home:"Arrivés chez eux",stat_active:"En attente de vol",imp_e:"Votre aide, concrètement",imp_h:"Choisissez un montant et découvrez ce qu'il finance",imp_with:"Avec {x}, vous financez :",imp_cta:"Donner pour une mission",imp_note:"Calculé sur nos coûts réels.",imp_none:"Chaque euro compte : il s'ajoute aux autres dons pour couvrir la prochaine dépense.",imp_full:"Avec {x}, vous financez tout le voyage d'un chat.",weeks:"Accueil et nourriture pour {n} sem.",
       loc_label:"Où êtes-vous ?",loc_all:"Tous les rôles",loc_ae:"Aux Émirats",loc_it:"En Italie",loc_any:"Partout",tm_r1:"Un vol",tm_r2:"Pour toujours ou quelques semaines",tm_r3:"Quelques heures par semaine",tm_r4:"Quelques semaines",tm_r5:"5 minutes",apply:"Je me propose",msg_intro:"Copiez ce message et envoyez-le-nous sur Instagram :",copy_msg:"Copier le message",open_ig:"Ouvrir Instagram",msg_tpl:"Bonjour Paws Without Borders ! J'ai vu votre site et j'aimerais vous aider comme : {role}.\nJ'écris depuis : \nJe suis disponible : ",
+      rate_note:"Prix en dirhams des Émirats (AED). Conversion indicative : 1 AED = {r} €.",
       st:{raccolta:"Collecte en cours",cure:"En soins",documenti:"Documents en cours",volo:"Vol réservé",casa:"Enfin chez lui"}},
     ru:{from:"Эмираты",to:"Италия",hook:"Семьи уезжают. Кошки остаются на улице.",
       lead:"Слишком часто семьи, уезжая из страны, бросают своих кошек на улице, под солнцем, которое летом раскаляет воздух выше 45 градусов. Мы находим их и вместе с ветеринарами и передержками лечим и готовим к перелёту в Италию, где их ждёт новая семья.",
@@ -550,6 +558,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       r3_p:"Спасение с улицы, поездки к ветеринару и в аэропорт: даже несколько часов в неделю многое меняют.",r4_h:"Передержка",r4_p:"Пока кошки ждут рейса, им нужен временный дом в Эмиратах. Вы даёте безопасное место на несколько недель, а мы помогаем с кормом и лечением.",
       donate_now:"Помочь сейчас",fly_caption:"Каждый рейс становится билетом в один конец домой.",stat_home:"Уже дома",stat_active:"Ждут рейса",imp_e:"Ваша помощь на деле",imp_h:"Выберите сумму и узнайте, на что она пойдёт",imp_with:"{x} покроет:",imp_cta:"Пожертвовать на миссию",imp_note:"Рассчитано по нашим реальным расходам.",imp_none:"Каждый евро важен: вместе с другими пожертвованиями он покроет следующую трату.",imp_full:"{x} покроет всё путешествие одной кошки.",weeks:"Передержка и корм на {n} нед.",
       loc_label:"Где вы находитесь?",loc_all:"Все роли",loc_ae:"В Эмиратах",loc_it:"В Италии",loc_any:"Где угодно",tm_r1:"Один рейс",tm_r2:"Навсегда или на несколько недель",tm_r3:"Несколько часов в неделю",tm_r4:"Несколько недель",tm_r5:"5 минут",apply:"Хочу помочь",msg_intro:"Скопируйте это сообщение и отправьте нам в Instagram:",copy_msg:"Копировать сообщение",open_ig:"Открыть Instagram",msg_tpl:"Здравствуйте, Paws Without Borders! Я посмотрел(а) ваш сайт и хочу помочь. Роль: {role}.\nЯ нахожусь в: \nКогда могу помогать: ",
+      rate_note:"Цены в дирхамах ОАЭ (AED). Примерный курс: 1 AED = € {r}.",
       st:{raccolta:"Идёт сбор",cure:"На лечении",documenti:"Оформляем документы",volo:"Рейс забронирован",casa:"Уже дома"}},
     ar:{from:"الإمارات",to:"إيطاليا",hook:"العائلات ترحل، والقطط تبقى في الشارع.",
       lead:"كثيرًا ما تتخلى عائلات عن قططها في الشارع عند مغادرة البلاد، تحت شمس تتجاوز حرارتها 45 درجة في الصيف. نحن نجدها، ومع أطباء بيطريين وعائلات مستضيفة نعالجها ونجهّزها للسفر إلى إيطاليا، حيث تنتظرها عائلة جديدة.",
@@ -576,6 +585,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       r3_p:"إنقاذ من الشارع، مشاوير إلى الطبيب البيطري وتوصيل إلى المطار: حتى ساعات قليلة في الأسبوع تصنع فرقًا.",r4_h:"استضافة مؤقتة",r4_p:"بينما تنتظر القطط رحلتها، تحتاج إلى بيت مؤقت في الإمارات. أنت تقدّم مكانًا آمنًا لبضعة أسابيع، ونحن نساعدك في الطعام والرعاية البيطرية.",
       donate_now:"تبرّع الآن",fly_caption:"كل رحلة تذكرة ذهاب بلا عودة إلى البيت.",stat_home:"وصلوا إلى البيت",stat_active:"بانتظار الرحلة",imp_e:"مساعدتك على أرض الواقع",imp_h:"اختر مبلغًا واكتشف ما يغطيه",imp_with:"{x} تغطي:",imp_cta:"تبرّع لمهمة",imp_note:"محسوبة على أساس تكاليفنا الفعلية.",imp_none:"كل يورو مهم: يُضاف إلى تبرعات الآخرين لتغطية النفقة التالية.",imp_full:"{x} تغطي رحلة قطة كاملة.",weeks:"استضافة وطعام لمدة {n} أسبوع",
       loc_label:"أين أنت؟",loc_all:"كل الأدوار",loc_ae:"في الإمارات",loc_it:"في إيطاليا",loc_any:"في أي مكان",tm_r1:"رحلة واحدة",tm_r2:"للأبد أو لبضعة أسابيع",tm_r3:"بضع ساعات أسبوعيًا",tm_r4:"بضعة أسابيع",tm_r5:"5 دقائق",apply:"أريد المساعدة",msg_intro:"انسخ هذه الرسالة وأرسلها إلينا على إنستغرام:",copy_msg:"نسخ الرسالة",open_ig:"افتح إنستغرام",msg_tpl:"مرحبًا Paws Without Borders! رأيت موقعكم وأود المساعدة في دور: {role}.\nأكتب لكم من: \nأوقات تفرغي: ",
+      rate_note:"الأسعار بالدرهم الإماراتي (AED). تحويل تقريبي: 1 درهم = {r} يورو.",
       st:{raccolta:"جمع التبرعات",cure:"قيد العلاج",documenti:"تجهيز الوثائق",volo:"تم حجز الرحلة",casa:"وصلت إلى البيت"}}
   };
   const GROUPS = [
@@ -597,6 +607,10 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
   const $ = id => document.getElementById(id);
   const t = k => (T[lang][k] ?? T.it[k]);
   const eur = n => "€ " + Math.round(Number(n)||0).toLocaleString(LOCALE[lang]);
+  const nf = n => Math.round(Number(n)||0).toLocaleString(LOCALE[lang]);
+  const rate = () => { const r = Number(state.rate && state.rate.aed_eur); return r>0 && r<10 ? r : 0.243; };
+  const aed = n => "AED " + nf(n);
+  const aedEur = n => "≈ " + eur(n * rate());
   const safeUrl = u => /^https:\/\//i.test(u||"") ? u : "";
   function el(tag, cls, text){ const e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
 
@@ -631,7 +645,11 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
         const ic = el("span","iico"); ic.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">'+(ICONS[k]||"")+'</svg>';
         lbl.append(ic, el("span",null,t("i_"+k))); li.append(lbl);
         const v = num(k);
-        if(v){ const a = el("span","amt",VARIABLE.includes(k) ? t("from_x").replace("{x}",eur(v)) : eur(v)); if(WEEKLY.includes(k)){ a.append(" ", el("span","per",t("per_week"))); } li.append(a); }
+        if(v){
+          const a = el("span","amt"); const main = el("span",null,VARIABLE.includes(k) ? t("from_x").replace("{x}",aed(v)) : aed(v)); a.append(main);
+          if(WEEKLY.includes(k)) main.append(" ", el("span","per",t("per_week")));
+          a.append(el("span","conv",aedEur(v))); li.append(a);
+        }
         ul.append(li);
       });
       card.append(ul); box.append(card);
@@ -640,11 +658,13 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     const extra = VARIABLE.reduce((s,k)=>s+num(k),0);
     const weekly = WEEKLY.reduce((s,k)=>s+num(k),0);
     const tot = $("total"); tot.replaceChildren(); tot.hidden = !(once>0);
+    const rn = $("rateNote"); rn.hidden = !(once>0); rn.textContent = t("rate_note").replace("{r}", (rate()).toLocaleString(LOCALE[lang],{maximumFractionDigits:3}));
     if(once>0){
       const left = el("div"); left.append(el("span",null,t("total")));
-      if(weekly>0) left.append(el("small",null,t("wait_extra").replace("{x}",eur(weekly))));
-      if(extra>0) left.append(el("small",null,t("extra_note").replace("{x}",eur(extra))));
-      tot.append(left, el("b",null,eur(once)));
+      if(weekly>0) left.append(el("small",null,t("wait_extra").replace("{x}",aed(weekly)+" ("+aedEur(weekly)+")")));
+      if(extra>0) left.append(el("small",null,t("extra_note").replace("{x}",aed(extra)+" ("+aedEur(extra)+")")));
+      const right = el("div","tot-amt"); right.append(el("b",null,aed(once)), el("small",null,aedEur(once)));
+      tot.append(left, right);
     }
   }
 
@@ -699,7 +719,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
   let amount = 50;
   function iconSpan(k){ const ic = el("span","iico"); ic.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">'+(ICONS[k]||"")+'</svg>'; return ic; }
   function renderImpact(){
-    const num = k => { const v = Number(state.costs[k]); return v>0 ? v : 0; };
+    const num = k => { const v = Number(state.costs[k]); return v>0 ? v * rate() : 0; };
     const once = GROUPS.flatMap(g=>g.items).filter(k=>!WEEKLY.includes(k) && !VARIABLE.includes(k) && num(k)>0);
     const total = once.reduce((s,k)=>s+num(k),0);
     $("impact").hidden = once.length === 0;
@@ -845,6 +865,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     state.trips = Array.isArray(d.trips) ? d.trips : [];
     state.costs = d.costs && typeof d.costs==="object" ? d.costs : {};
     state.site = d.site || {};
+    state.rate = d.rate || {};
     const order = {raccolta:0,cure:1,documenti:2,volo:3,casa:4};
     state.missions.sort((a,b)=>(Number(a.order)||99)-(Number(b.order)||99) || (order[a.status]??0)-(order[b.status]??0) || String(a.name).localeCompare(String(b.name)));
     const h = String(state.site.instagram||"").replace(/^@/,"").trim();

@@ -105,27 +105,27 @@ content:
         default: true
 
   - name: costi
-    label: Prezzi delle spese
+    label: Prezzi delle spese (in AED)
     type: file
     path: content/costi.json
     format: json
     fields:
-      - { name: fivfelv, label: Test FIV/FeLV (€), type: number }
-      - { name: fcov, label: Test coronavirus felino (€), type: number }
-      - { name: giardia, label: Test Giardia (€), type: number }
-      - { name: blood, label: Analisi del sangue (€), type: number }
-      - { name: parvo, label: Vaccino trivalente (€), type: number }
-      - { name: deworm, label: Sverminazione e antiparassitari (€), type: number }
-      - { name: steril, label: Sterilizzazione (€), type: number }
-      - { name: extra, label: Cure aggiuntive, a partire da (€), type: number }
-      - { name: microchip, label: Microchip (€), type: number }
-      - { name: rabies, label: Vaccino antirabbia (€), type: number }
-      - { name: cert, label: Certificato sanitario UE (€), type: number }
-      - { name: export, label: Pratiche per l'esportazione (€), type: number }
-      - { name: flight, label: Volo in stiva (€), type: number }
-      - { name: crate, label: Gabbia omologata IATA (€), type: number }
-      - { name: foster, label: Stallo o pensione dal veterinario (€ a settimana), type: number }
-      - { name: food, label: Cibo (€ a settimana), type: number }
+      - { name: fivfelv, label: Test FIV/FeLV (AED), type: number }
+      - { name: fcov, label: Test coronavirus felino (AED), type: number }
+      - { name: giardia, label: Test Giardia (AED), type: number }
+      - { name: blood, label: Analisi del sangue (AED), type: number }
+      - { name: parvo, label: Vaccino trivalente (AED), type: number }
+      - { name: deworm, label: Sverminazione e antiparassitari (AED), type: number }
+      - { name: steril, label: Sterilizzazione (AED), type: number }
+      - { name: extra, label: Cure aggiuntive, a partire da (AED), type: number }
+      - { name: microchip, label: Microchip (AED), type: number }
+      - { name: rabies, label: Vaccino antirabbia (AED), type: number }
+      - { name: cert, label: Certificato sanitario UE (AED), type: number }
+      - { name: export, label: Pratiche per l'esportazione (AED), type: number }
+      - { name: flight, label: Volo in stiva (AED), type: number }
+      - { name: crate, label: Gabbia omologata IATA (AED), type: number }
+      - { name: foster, label: Stallo o pensione dal veterinario (AED a settimana), type: number }
+      - { name: food, label: Cibo (AED a settimana), type: number }
 
   - name: sito
     label: Impostazioni del sito
@@ -136,3 +136,10 @@ content:
       - name: instagram
         label: Nome account Instagram (senza @)
         type: string
+      - name: cambio_automatico
+        label: Aggiorna il cambio AED → EUR in automatico
+        type: boolean
+        default: true
+      - name: cambio_aed_eur
+        label: Cambio manuale, quanti euro vale 1 AED (usato se il cambio automatico è spento o non disponibile)
+        type: number
