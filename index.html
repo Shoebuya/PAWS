@@ -976,8 +976,10 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/><path d="M12 9v5M9.5 11.5h5"/></svg>'
       : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 16.5l19-7-2-3-7 2.5-5-4-2 1 3 5-4 1.5-2-1.5-1.5.8z"/></svg>';
     ty.append(el("span",null,t(missionType(m)==="veterinario" ? "type_vet" : "type_flight"))); meta.append(ty);
-    if(m.from || m.to) add((m.from||t("from")) + arrow + (m.to||t("to")));
-    if(m.date) add(t("flight_on").replace("{d}", fmtDate(m.date)));
+    if(missionType(m)==="volo"){
+      if(m.from || m.to) add((m.from||t("from")) + arrow + (m.to||t("to")));
+      if(m.date) add(t("flight_on").replace("{d}", fmtDate(m.date)));
+    }
     if(Number(m.cats)>0) add(t("cats_n").replace("{n}", Number(m.cats)));
     return meta;
   }

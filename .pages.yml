@@ -43,13 +43,13 @@ content:
           rename: safe
           extensions: [jpg, jpeg, png, webp]
       - name: from
-        label: Da (Emirati)
+        label: Da (Emirati) – solo per richieste di volo
         type: string
       - name: to
-        label: Verso (Italia)
+        label: Verso (Italia) – solo per richieste di volo
         type: string
       - name: date
-        label: Data del volo (facoltativa)
+        label: Data del volo – solo per richieste di volo (facoltativa)
         type: date
       - name: cats
         label: Numero di gatti (aggiorna i contatori "In attesa di volo" / "In cura")
