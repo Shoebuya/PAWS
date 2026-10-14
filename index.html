@@ -317,6 +317,29 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
   .th .mh-media{min-height:300px}
 }
 
+/* cats of the mission */
+.catstrip{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.catstrip .faces{display:flex}
+.catstrip .faces span{width:44px;height:44px;border-radius:50%;overflow:hidden;border:3px solid var(--surface);margin-inline-start:-10px;background:var(--gold-soft);display:block}
+.catstrip .faces span:first-child{margin-inline-start:0}
+.catstrip .faces img{width:100%;height:100%;object-fit:cover;display:block}
+.catstrip .more{font:700 .8rem var(--body);color:var(--muted)}
+.d-grid h2{margin-top:22px;margin-bottom:12px}
+.catgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:6px 0 26px}
+.catcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;text-align:start;padding:0;cursor:zoom-in;color:inherit;font:inherit}
+.catcard img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.catcard .cc-body{padding:10px 12px 12px;display:grid;gap:2px}
+.catcard b{font:800 1rem var(--display);font-stretch:112%}
+.catcard small{color:var(--muted);font-size:.82rem;line-height:1.35}
+.d-gallery img{cursor:zoom-in}
+.lightbox{position:fixed;inset:0;z-index:60;background:rgba(8,16,22,.92);display:grid;place-items:center;padding:24px}
+.lightbox img{max-width:100%;max-height:82vh;border-radius:12px;display:block}
+.lightbox figcaption{color:#fff;text-align:center;margin-top:12px;font-weight:600}
+.lightbox button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));inset-inline-end:14px;border:0;background:rgba(255,255,255,.15);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer}
+.lightbox .nav{top:50%;transform:translateY(-50%)}
+.lightbox .prev{inset-inline-start:14px;inset-inline-end:auto}
+.lightbox .next{inset-inline-end:14px}
+
 @media (max-width:760px){
   .flight .lbl{font-size:30px}.flight .sub{font-size:20px}
   .impact{padding:22px 18px}
@@ -570,6 +593,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_story:"Leggi la storia completa",back:"Torna alle missioni",share:"Condividi",link_copied:"Link copiato",raised_big:"{x}",of_goal:"raccolti su {x}",pct:"{p}%",cats_n:"{n} gatti",flight_on:"Volo del {d}",donate_cta:"Dona su GoFundMe",story_h:"La storia",photos_h:"Foto",not_found:"Questa missione non è più disponibile.",help_share:"Non puoi donare? Condividere la raccolta aiuta tantissimo.",
       read_trip:"Leggi il racconto completo",back_trips:"Torna ai viaggi",photos_n:"{n} foto",mission_done:"Missione compiuta",cats_home:"gatti arrivati a casa",next_mission:"Sostieni la prossima missione",adopted:"I gatti di questo viaggio",
       stat_care:"In cura",type_flight:"Raccolta per il volo",type_vet:"Cure veterinarie",
+      cats_flight:"I gatti di questo volo",cats_vet:"Chi stiamo curando",more_n:"+{n}",close:"Chiudi",
       st:{raccolta:"Raccolta fondi",cure:"In cura",documenti:"Documenti in corso",volo:"Volo prenotato",casa:"Arrivato a casa"}},
     en:{from:"Emirates",to:"Italy",hook:"Families leave. Their cats stay on the street.",
       lead:"Too often, families leaving the country abandon their cats on the street, under a sun that tops 45 degrees in summer. We find them and, together with vets and fosters, we treat them and get them ready to fly to Italy, where a new family is waiting.",
@@ -600,6 +624,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_story:"Read the full story",back:"Back to missions",share:"Share",link_copied:"Link copied",raised_big:"{x}",of_goal:"raised of {x}",pct:"{p}%",cats_n:"{n} cats",flight_on:"Flight on {d}",donate_cta:"Donate on GoFundMe",story_h:"The story",photos_h:"Photos",not_found:"This mission is no longer available.",help_share:"Can't donate? Sharing the fundraiser helps a lot.",
       read_trip:"Read the full story",back_trips:"Back to journeys",photos_n:"{n} photos",mission_done:"Mission accomplished",cats_home:"cats made it home",next_mission:"Support the next mission",adopted:"The cats on this journey",
       stat_care:"In treatment",type_flight:"Flight fundraiser",type_vet:"Vet care",
+      cats_flight:"The cats on this flight",cats_vet:"Who we're caring for",more_n:"+{n}",close:"Close",
       st:{raccolta:"Fundraising",cure:"In treatment",documenti:"Paperwork in progress",volo:"Flight booked",casa:"Home at last"}},
     fr:{from:"Émirats",to:"Italie",hook:"Les familles partent. Les chats restent dans la rue.",
       lead:"Trop souvent, des familles qui quittent le pays abandonnent leurs chats dans la rue, sous un soleil qui dépasse les 45 degrés en été. Nous les trouvons et, avec des vétérinaires et des familles d'accueil, nous les soignons et les préparons au vol vers l'Italie, où une nouvelle famille les attend.",
@@ -630,6 +655,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_story:"Lire toute l'histoire",back:"Retour aux missions",share:"Partager",link_copied:"Lien copié",raised_big:"{x}",of_goal:"collectés sur {x}",pct:"{p} %",cats_n:"{n} chats",flight_on:"Vol du {d}",donate_cta:"Donner sur GoFundMe",story_h:"L'histoire",photos_h:"Photos",not_found:"Cette mission n'est plus disponible.",help_share:"Vous ne pouvez pas donner ? Partager la cagnotte aide énormément.",
       read_trip:"Lire tout le récit",back_trips:"Retour aux voyages",photos_n:"{n} photos",mission_done:"Mission accomplie",cats_home:"chats arrivés chez eux",next_mission:"Soutenir la prochaine mission",adopted:"Les chats de ce voyage",
       stat_care:"En soins",type_flight:"Collecte pour le vol",type_vet:"Soins vétérinaires",
+      cats_flight:"Les chats de ce vol",cats_vet:"Ceux que nous soignons",more_n:"+{n}",close:"Fermer",
       st:{raccolta:"Collecte en cours",cure:"En soins",documenti:"Documents en cours",volo:"Vol réservé",casa:"Enfin chez lui"}},
     ru:{from:"Эмираты",to:"Италия",hook:"Семьи уезжают. Кошки остаются на улице.",
       lead:"Слишком часто семьи, уезжая из страны, бросают своих кошек на улице, под солнцем, которое летом раскаляет воздух выше 45 градусов. Мы находим их и вместе с ветеринарами и передержками лечим и готовим к перелёту в Италию, где их ждёт новая семья.",
@@ -660,6 +686,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_story:"Читать всю историю",back:"Назад к миссиям",share:"Поделиться",link_copied:"Ссылка скопирована",raised_big:"{x}",of_goal:"собрано из {x}",pct:"{p}%",cats_n:"Кошек: {n}",flight_on:"Рейс {d}",donate_cta:"Помочь на GoFundMe",story_h:"История",photos_h:"Фото",not_found:"Эта миссия больше недоступна.",help_share:"Не можете пожертвовать? Репост сбора тоже очень помогает.",
       read_trip:"Читать весь рассказ",back_trips:"Назад к путешествиям",photos_n:"Фото: {n}",mission_done:"Миссия выполнена",cats_home:"кошек уже дома",next_mission:"Поддержать следующую миссию",adopted:"Кошки этого рейса",
       stat_care:"На лечении",type_flight:"Сбор на перелёт",type_vet:"Ветеринарная помощь",
+      cats_flight:"Кошки этого рейса",cats_vet:"Кого мы лечим",more_n:"+{n}",close:"Закрыть",
       st:{raccolta:"Идёт сбор",cure:"На лечении",documenti:"Оформляем документы",volo:"Рейс забронирован",casa:"Уже дома"}},
     ar:{from:"الإمارات",to:"إيطاليا",hook:"العائلات ترحل، والقطط تبقى في الشارع.",
       lead:"كثيرًا ما تتخلى عائلات عن قططها في الشارع عند مغادرة البلاد، تحت شمس تتجاوز حرارتها 45 درجة في الصيف. نحن نجدها، ومع أطباء بيطريين وعائلات مستضيفة نعالجها ونجهّزها للسفر إلى إيطاليا، حيث تنتظرها عائلة جديدة.",
@@ -690,6 +717,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_story:"اقرأ القصة كاملة",back:"العودة إلى المهام",share:"مشاركة",link_copied:"تم نسخ الرابط",raised_big:"{x}",of_goal:"تم جمعها من أصل {x}",pct:"{p}٪",cats_n:"{n} قطط",flight_on:"الرحلة في {d}",donate_cta:"تبرّع عبر GoFundMe",story_h:"القصة",photos_h:"الصور",not_found:"هذه المهمة لم تعد متاحة.",help_share:"لا تستطيع التبرع؟ مشاركة الحملة تساعد كثيرًا.",
       read_trip:"اقرأ القصة كاملة",back_trips:"العودة إلى الرحلات",photos_n:"{n} صور",mission_done:"تمت المهمة",cats_home:"قطط وصلت إلى البيت",next_mission:"ادعم المهمة القادمة",adopted:"قطط هذه الرحلة",
       stat_care:"قيد العلاج",type_flight:"حملة لتمويل الرحلة",type_vet:"رعاية بيطرية",
+      cats_flight:"قطط هذه الرحلة",cats_vet:"من نعتني بهم",more_n:"+{n}",close:"إغلاق",
       st:{raccolta:"جمع التبرعات",cure:"قيد العلاج",documenti:"تجهيز الوثائق",volo:"تم حجز الرحلة",casa:"وصلت إلى البيت"}}
   };
   const GROUPS = [
@@ -1004,6 +1032,28 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
   const missionType = m => m.tipo==="veterinario" || m.tipo==="volo" ? m.tipo : (m.status==="cure" ? "veterinario" : "volo");
   const missionHref = m => "#missione-" + encodeURIComponent(m.id);
 
+  const missionCats = m => [].concat(m.gatti||[]).filter(c => c && isImg(c.foto));
+  function lightbox(items, i){
+    const ov = el("div","lightbox"); ov.setAttribute("role","dialog"); ov.setAttribute("aria-modal","true");
+    const fig = el("figure"); fig.style.margin = "0";
+    const im = el("img"); const cap = el("figcaption");
+    fig.append(im, cap); ov.append(fig);
+    const show = () => { const it = items[i]; im.src = it.src; im.alt = it.cap||""; cap.textContent = it.cap||""; };
+    const close = el("button",null,"×"); close.type="button"; close.setAttribute("aria-label",t("close"));
+    const end = () => { ov.remove(); document.removeEventListener("keydown", key); };
+    close.addEventListener("click", end); ov.append(close);
+    if(items.length>1){
+      const pv = el("button","nav prev","‹"), nx = el("button","nav next","›"); pv.type = nx.type = "button";
+      pv.addEventListener("click", e => { e.stopPropagation(); i = (i-1+items.length)%items.length; show(); });
+      nx.addEventListener("click", e => { e.stopPropagation(); i = (i+1)%items.length; show(); });
+      ov.append(pv, nx);
+    }
+    ov.addEventListener("click", e => { if(e.target===ov) end(); });
+    const key = e => { if(e.key==="Escape") end(); if(e.key==="ArrowRight" && items.length>1){ i=(i+1)%items.length; show(); } if(e.key==="ArrowLeft" && items.length>1){ i=(i-1+items.length)%items.length; show(); } };
+    document.addEventListener("keydown", key);
+    show(); document.body.append(ov); close.focus();
+  }
+
   function renderMissions(){
     const list = $("list"); list.replaceChildren();
     const ms = state.missions;
@@ -1018,6 +1068,14 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       const h = el("h3","mh-title"); const ha = el("a",null,m.name||"—"); ha.href = missionHref(m); h.append(ha);
       body.append(h);
       const meta = metaTags(m); if(meta.children.length) body.append(meta);
+      const mc = missionCats(m);
+      if(mc.length){
+        const strip = el("a","catstrip"); strip.href = missionHref(m); strip.style.textDecoration = "none";
+        const faces = el("span","faces"); mc.slice(0,6).forEach(c => { const f = el("span"); f.append(pic(c.foto, 640, c.nome||"")); faces.append(f); });
+        strip.append(faces);
+        const lbl = el("span","more", t(missionType(m)==="veterinario" ? "cats_vet" : "cats_flight") + (mc.length>6 ? " · " + t("more_n").replace("{n}", mc.length-6) : ""));
+        strip.append(lbl); body.append(strip);
+      }
       const amt = amountBlock(m, true); if(amt) body.append(amt);
       const story = storyOf(m);
       if(story){
@@ -1068,10 +1126,24 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     head.append(st, el("h1",null,m.name||"—"));
     const meta = metaTags(m); if(meta.children.length) head.append(meta);
     main.append(head);
+    const mc = missionCats(m);
+    if(mc.length){
+      main.append(el("h2",null,t(missionType(m)==="veterinario" ? "cats_vet" : "cats_flight")));
+      const cg = el("div","catgrid");
+      const items = mc.map(c => ({src:c.foto, cap:[c.nome,c.nota].filter(Boolean).join(" · ")}));
+      mc.forEach((c,i) => {
+        const b = el("button","catcard"); b.type = "button";
+        b.append(pic(c.foto, 640, c.nome||""));
+        if(c.nome || c.nota){ const cb = el("span","cc-body"); if(c.nome) cb.append(el("b",null,c.nome)); if(c.nota) cb.append(el("small",null,c.nota)); b.append(cb); }
+        b.addEventListener("click", () => lightbox(items, i));
+        cg.append(b);
+      });
+      main.append(cg);
+    }
     const story = storyOf(m);
     if(story){ const sb = el("div","story"); if(lang!=="it" && !m.desc_en) sb.lang = "it"; sb.append(storyNodes(story)); main.append(sb); }
     const gal = [].concat(m.gallery||[]).filter(isImg);
-    if(gal.length){ main.append(el("h2",null,t("photos_h"))); const g = el("div","d-gallery"); gal.forEach(u => g.append(pic(u, 640, m.name))); main.append(g); }
+    if(gal.length){ main.append(el("h2",null,t("photos_h"))); const g = el("div","d-gallery"); const its = gal.map(u=>({src:u,cap:""})); gal.forEach((u,i) => { const im = pic(u, 640, m.name); im.addEventListener("click",()=>lightbox(its,i)); g.append(im); }); main.append(g); }
     const side = el("aside","d-side");
     const amt = amountBlock(m, true); if(amt) side.append(amt);
     side.append(donateBtn(m,"btn-lg"), shareBtn(m,""), el("p","muted",t("help_share")));

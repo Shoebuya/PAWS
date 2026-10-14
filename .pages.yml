@@ -60,6 +60,23 @@ content:
       - name: desc_en
         label: Storia in inglese (facoltativa, per chi legge in altre lingue)
         type: text
+      - name: gatti
+        label: I gatti della missione (foto, nome e breve nota per ogni gatto)
+        type: object
+        list: true
+        fields:
+          - name: foto
+            label: Foto del gatto
+            type: image
+            options:
+              rename: safe
+              extensions: [jpg, jpeg, png, webp]
+          - name: nome
+            label: Nome
+            type: string
+          - name: nota
+            label: Breve nota (facoltativa, es. "2 anni, dolcissima")
+            type: string
       - name: gallery
         label: Altre foto per la pagina della storia (facoltative, fino a 8)
         type: image
