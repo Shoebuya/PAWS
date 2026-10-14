@@ -340,6 +340,19 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
 .lightbox .prev{inset-inline-start:14px;inset-inline-end:auto}
 .lightbox .next{inset-inline-end:14px}
 
+/* collapsible story */
+.acc{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.acc + .acc{margin-top:-4px}
+.acc summary{list-style:none;cursor:pointer;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;font:800 1rem/1.3 var(--display);font-stretch:112%;color:var(--ink)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"";flex:none;width:10px;height:10px;border-right:2.5px solid var(--gold);border-bottom:2.5px solid var(--gold);transform:rotate(45deg);transition:transform .2s;margin-top:-4px}
+.acc[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.acc summary:hover{background:var(--gold-soft)}
+.acc .acc-body{padding:2px 18px 16px;display:grid;gap:12px}
+.acc.more summary{font:700 .95rem var(--body);color:var(--gold)}
+.story-tools{display:flex;justify-content:flex-end}
+.linkbtn{border:0;background:none;color:var(--muted);font:700 .88rem var(--body);cursor:pointer;padding:4px 0;text-decoration:underline;text-underline-offset:3px}
+
 @media (max-width:760px){
   .flight .lbl{font-size:30px}.flight .sub{font-size:20px}
   .impact{padding:22px 18px}
@@ -594,6 +607,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_trip:"Leggi il racconto completo",back_trips:"Torna ai viaggi",photos_n:"{n} foto",mission_done:"Missione compiuta",cats_home:"gatti arrivati a casa",next_mission:"Sostieni la prossima missione",adopted:"I gatti di questo viaggio",
       stat_care:"In cura",type_flight:"Raccolta per il volo",type_vet:"Cure veterinarie",
       cats_flight:"I gatti di questo volo",cats_vet:"Chi stiamo curando",more_n:"+{n}",close:"Chiudi",
+      read_more:"Continua a leggere",open_all:"Apri tutto",close_all:"Chiudi tutto",
       st:{raccolta:"Raccolta fondi",cure:"In cura",documenti:"Documenti in corso",volo:"Volo prenotato",casa:"Arrivato a casa"}},
     en:{from:"Emirates",to:"Italy",hook:"Families leave. Their cats stay on the street.",
       lead:"Too often, families leaving the country abandon their cats on the street, under a sun that tops 45 degrees in summer. We find them and, together with vets and fosters, we treat them and get them ready to fly to Italy, where a new family is waiting.",
@@ -625,6 +639,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_trip:"Read the full story",back_trips:"Back to journeys",photos_n:"{n} photos",mission_done:"Mission accomplished",cats_home:"cats made it home",next_mission:"Support the next mission",adopted:"The cats on this journey",
       stat_care:"In treatment",type_flight:"Flight fundraiser",type_vet:"Vet care",
       cats_flight:"The cats on this flight",cats_vet:"Who we're caring for",more_n:"+{n}",close:"Close",
+      read_more:"Keep reading",open_all:"Expand all",close_all:"Collapse all",
       st:{raccolta:"Fundraising",cure:"In treatment",documenti:"Paperwork in progress",volo:"Flight booked",casa:"Home at last"}},
     fr:{from:"Émirats",to:"Italie",hook:"Les familles partent. Les chats restent dans la rue.",
       lead:"Trop souvent, des familles qui quittent le pays abandonnent leurs chats dans la rue, sous un soleil qui dépasse les 45 degrés en été. Nous les trouvons et, avec des vétérinaires et des familles d'accueil, nous les soignons et les préparons au vol vers l'Italie, où une nouvelle famille les attend.",
@@ -656,6 +671,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_trip:"Lire tout le récit",back_trips:"Retour aux voyages",photos_n:"{n} photos",mission_done:"Mission accomplie",cats_home:"chats arrivés chez eux",next_mission:"Soutenir la prochaine mission",adopted:"Les chats de ce voyage",
       stat_care:"En soins",type_flight:"Collecte pour le vol",type_vet:"Soins vétérinaires",
       cats_flight:"Les chats de ce vol",cats_vet:"Ceux que nous soignons",more_n:"+{n}",close:"Fermer",
+      read_more:"Lire la suite",open_all:"Tout ouvrir",close_all:"Tout fermer",
       st:{raccolta:"Collecte en cours",cure:"En soins",documenti:"Documents en cours",volo:"Vol réservé",casa:"Enfin chez lui"}},
     ru:{from:"Эмираты",to:"Италия",hook:"Семьи уезжают. Кошки остаются на улице.",
       lead:"Слишком часто семьи, уезжая из страны, бросают своих кошек на улице, под солнцем, которое летом раскаляет воздух выше 45 градусов. Мы находим их и вместе с ветеринарами и передержками лечим и готовим к перелёту в Италию, где их ждёт новая семья.",
@@ -687,6 +703,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_trip:"Читать весь рассказ",back_trips:"Назад к путешествиям",photos_n:"Фото: {n}",mission_done:"Миссия выполнена",cats_home:"кошек уже дома",next_mission:"Поддержать следующую миссию",adopted:"Кошки этого рейса",
       stat_care:"На лечении",type_flight:"Сбор на перелёт",type_vet:"Ветеринарная помощь",
       cats_flight:"Кошки этого рейса",cats_vet:"Кого мы лечим",more_n:"+{n}",close:"Закрыть",
+      read_more:"Читать дальше",open_all:"Раскрыть всё",close_all:"Свернуть всё",
       st:{raccolta:"Идёт сбор",cure:"На лечении",documenti:"Оформляем документы",volo:"Рейс забронирован",casa:"Уже дома"}},
     ar:{from:"الإمارات",to:"إيطاليا",hook:"العائلات ترحل، والقطط تبقى في الشارع.",
       lead:"كثيرًا ما تتخلى عائلات عن قططها في الشارع عند مغادرة البلاد، تحت شمس تتجاوز حرارتها 45 درجة في الصيف. نحن نجدها، ومع أطباء بيطريين وعائلات مستضيفة نعالجها ونجهّزها للسفر إلى إيطاليا، حيث تنتظرها عائلة جديدة.",
@@ -718,6 +735,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       read_trip:"اقرأ القصة كاملة",back_trips:"العودة إلى الرحلات",photos_n:"{n} صور",mission_done:"تمت المهمة",cats_home:"قطط وصلت إلى البيت",next_mission:"ادعم المهمة القادمة",adopted:"قطط هذه الرحلة",
       stat_care:"قيد العلاج",type_flight:"حملة لتمويل الرحلة",type_vet:"رعاية بيطرية",
       cats_flight:"قطط هذه الرحلة",cats_vet:"من نعتني بهم",more_n:"+{n}",close:"إغلاق",
+      read_more:"تابع القراءة",open_all:"فتح الكل",close_all:"إغلاق الكل",
       st:{raccolta:"جمع التبرعات",cure:"قيد العلاج",documenti:"تجهيز الوثائق",volo:"تم حجز الرحلة",casa:"وصلت إلى البيت"}}
   };
   const GROUPS = [
@@ -854,7 +872,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     main.append(head);
     if(catNames(tr).length){ main.append(el("h3",null,t("adopted"))); const nb = namesBox(tr,false); nb.style.margin = "10px 0 22px"; main.append(nb); }
     const note = tripNote(tr);
-    if(note){ const sb = el("div","story"); if(lang!=="it" && !tr.note_en) sb.lang = "it"; sb.append(storyNodes(note)); main.append(sb); }
+    if(note){ main.append(storyBlock(note, (lang!=="it" && !tr.note_en) ? "it" : "")); }
     if(ph.length>1){
       main.append(el("h2",null,t("photos_h")));
       const g = el("div","d-gallery full");
@@ -969,6 +987,59 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     for(const l of lines){ if(out.length >= max) break; out += (out ? " " : "") + l; }
     if(out.length > max){ out = out.slice(0, max); out = out.slice(0, out.lastIndexOf(" ")) + "…"; }
     return out;
+  }
+  function storyBlock(text, langAttr){
+    // split into sections by headings
+    const secs = []; let cur = {title:null, paras:[]};
+    text.replace(/\r/g,"").split(/\n{2,}/).forEach(block => {
+      let p = null;
+      block.split("\n").forEach(line => {
+        if(!line.trim()) return;
+        if(isHeading(line)){ if(cur.title!==null || cur.paras.length) secs.push(cur); cur = {title:line.trim(), paras:[]}; p = null; return; }
+        if(!p){ p = []; cur.paras.push(p); }
+        p.push(line.trim());
+      });
+    });
+    if(cur.title!==null || cur.paras.length) secs.push(cur);
+    const para = lines => { const e = el("p"); lines.forEach((l,i) => { if(i) e.append(el("br")); e.append(document.createTextNode(l)); }); return e; };
+    const wrap = el("div","story"); if(langAttr) wrap.lang = langAttr;
+    // intro = first section(s) until we have some text
+    let i = 0;
+    while(i < secs.length){
+      const sc = secs[i]; if(sc.title) wrap.append(el("h3",null,sc.title));
+      const n = sc.paras.length;
+      const shown = Math.min(n, secs.length===1 ? 2 : 3);
+      sc.paras.slice(0, shown).forEach(pp => wrap.append(para(pp)));
+      if(shown < n){
+        const d = el("details","acc more"); const su = el("summary",null,t("read_more")); const bd = el("div","acc-body");
+        sc.paras.slice(shown).forEach(pp => bd.append(para(pp))); d.append(su, bd); wrap.append(d);
+      }
+      i++;
+      if(sc.paras.length) break;
+    }
+    const rest = secs.slice(i);
+    const accs = [];
+    rest.forEach(sc => {
+      if(!sc.paras.length && sc.title){ // heading without text: use as label line
+        const d = el("details","acc"); d.append(el("summary",null,sc.title)); accs.push(d); return;
+      }
+      const d = el("details","acc"); d.append(el("summary",null,sc.title || t("read_more")));
+      const bd = el("div","acc-body"); sc.paras.forEach(pp => bd.append(para(pp))); d.append(bd); accs.push(d);
+    });
+    // merge empty-title accordions with the next one
+    const finalAccs = [];
+    for(let k=0;k<accs.length;k++){
+      const a = accs[k];
+      if(!a.querySelector(".acc-body") && accs[k+1]){ const nx = accs[k+1]; const s1 = a.querySelector("summary").textContent; const sm = nx.querySelector("summary"); sm.textContent = s1 + " · " + sm.textContent; continue; }
+      finalAccs.push(a);
+    }
+    if(finalAccs.length >= 3){
+      const tools = el("div","story-tools"); const tb = el("button","linkbtn",t("open_all")); tb.type = "button";
+      tb.addEventListener("click", () => { const open = tb.textContent===t("open_all"); finalAccs.forEach(d => d.open = open); tb.textContent = open ? t("close_all") : t("open_all"); });
+      tools.append(tb); wrap.append(tools);
+    }
+    finalAccs.forEach(a => wrap.append(a));
+    return wrap;
   }
   function storyNodes(text){
     const frag = document.createDocumentFragment();
@@ -1141,7 +1212,7 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
       main.append(cg);
     }
     const story = storyOf(m);
-    if(story){ const sb = el("div","story"); if(lang!=="it" && !m.desc_en) sb.lang = "it"; sb.append(storyNodes(story)); main.append(sb); }
+    if(story){ main.append(storyBlock(story, (lang!=="it" && !m.desc_en) ? "it" : "")); }
     const gal = [].concat(m.gallery||[]).filter(isImg);
     if(gal.length){ main.append(el("h2",null,t("photos_h"))); const g = el("div","d-gallery"); const its = gal.map(u=>({src:u,cap:""})); gal.forEach((u,i) => { const im = pic(u, 640, m.name); im.addEventListener("click",()=>lightbox(its,i)); g.append(im); }); main.append(g); }
     const side = el("aside","d-side");
