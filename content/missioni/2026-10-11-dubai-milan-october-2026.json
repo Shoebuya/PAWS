@@ -11,5 +11,8 @@
   "order": 1,
   "visibile": true,
   "tipo": "volo",
-  "cats": 10
+  "cats": 10,
+  "gallery": [
+    "/images/volo-30-ottobre-2026-arrivo.jpg"
+  ]
 }
