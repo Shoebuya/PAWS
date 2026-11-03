@@ -5,5 +5,8 @@
   "date": "2026-10-31",
   "from": "Dubai",
   "to": "Milan",
-  "visibile": true
+  "visibile": true,
+  "photos": [
+    "/images/viaggio-2026-10-31-malpensa.jpg"
+  ]
 }
