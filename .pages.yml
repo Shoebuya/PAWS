@@ -186,6 +186,12 @@ content:
       - name: instagram
         label: Nome account Instagram (senza @)
         type: string
+      - name: extra_arrivati
+        label: "Contatore Arrivati a casa: gatti da aggiungere (es. arrivati prima del sito)"
+        type: number
+      - name: extra_in_cura
+        label: "Contatore In cura: gatti da aggiungere (oltre a quelli delle richieste veterinarie)"
+        type: number
       - name: cambio_automatico
         label: Aggiorna il cambio AED → EUR in automatico
         type: boolean

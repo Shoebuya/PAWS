@@ -1,5 +1,7 @@
 {
   "instagram": "pawswithoutborders",
   "cambio_automatico": true,
-  "cambio_aed_eur": 0.243
+  "cambio_aed_eur": 0.243,
+  "extra_arrivati": 70,
+  "extra_in_cura": 20
 }

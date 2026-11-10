@@ -930,8 +930,10 @@ footer{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font
     const open = state.missions.filter(m=>m.status!=="casa");
     const nCats = m => Number(m.cats)>0 ? Number(m.cats) : 1;
     const flying = open.filter(m=>missionType(m)==="volo").reduce((s,m)=>s+nCats(m),0);
-    const care = open.filter(m=>missionType(m)==="veterinario").reduce((s,m)=>s+nCats(m),0);
-    [[home,"stat_home"],[flying,"stat_active"],[care,"stat_care"]].forEach(([n,k]) => { if(n>0){ const c = el("span","stat"); c.append(el("b",null,String(n)), el("span",null,t(k))); box.append(c); } });
+    const base = k => Math.max(0, parseInt((state.site||{})[k], 10) || 0);
+    const care = open.filter(m=>missionType(m)==="veterinario").reduce((s,m)=>s+nCats(m),0) + base("extra_in_cura");
+    const homeTot = home + base("extra_arrivati");
+    [[homeTot,"stat_home"],[flying,"stat_active"],[care,"stat_care"]].forEach(([n,k]) => { if(n>0){ const c = el("span","stat"); c.append(el("b",null,String(n)), el("span",null,t(k))); box.append(c); } });
   }
   (function setupMotion(){
     const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
